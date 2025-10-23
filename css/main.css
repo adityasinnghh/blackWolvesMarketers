@@ -308,20 +308,20 @@
   }
 
 
-/*pricing section */
+/*Packages section */
 
-.pricing.section {
+.Packages.section {
   padding: 80px 0;
   background: #0d0d0d;
   color: #fff;
 }
 
-.pricing .section-title {
+.Packages .section-title {
   text-align: center;
   margin-bottom: 50px;
 }
 
-.pricing-box {
+.Packages-box {
   background: #1a1a1a;
   border: 1px solid #222;
   border-radius: 15px;
@@ -330,41 +330,41 @@
   box-shadow: 0 0 15px rgba(255,255,255,0.05);
 }
 
-.pricing-box:hover {
+.Packages-box:hover {
   transform: translateY(-8px);
   box-shadow: 0 0 20px rgba(255,255,255,0.1);
 }
 
-.pricing-box h3 {
+.Packages-box h3 {
   font-size: 1.8rem;
   margin-bottom: 15px;
   font-weight: 600;
 }
 
-.pricing-box .price {
+.Packages-box .price {
   font-size: 2.4rem;
   color: #fffffe;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
-.pricing-box ul {
+.Packages-box ul {
   list-style: none;
   padding: 0;
   margin: 0 0 25px 0;
 }
 
-.pricing-box ul li {
+.Packages-box ul li {
   padding: 8px 0;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.pricing-box ul li.na {
+.Packages-box ul li.na {
   color: #777;
   text-decoration: line-through;
 }
 
-.pricing-box .btn-buy {
+.Packages-box .btn-buy {
   display: inline-block;
   background: #39C3ef;
   color: #fff;
@@ -375,23 +375,23 @@
   transition: all 0.3s ease;
 }
 
-.pricing-box .btn-buy:hover {
+.Packages-box .btn-buy:hover {
   background: #fff;
   color: #000;
 }
 
-.pricing-box.featured {
+.Packages-box.featured {
   background: #39C3ef;
   color: #fff;
   box-shadow: 0 0 25px rgba(255,46,99,0.3);
 }
 
-.pricing-box.featured .btn-buy {
+.Packages-box.featured .btn-buy {
   background: #fff;
   color: #39C3ef;
 }
 
-.pricing-box.featured .btn-buy:hover {
+.Packages-box.featured .btn-buy:hover {
   background: #000;
   color: #fff;
 }
@@ -2625,6 +2625,37 @@ section,
   .contact .php-email-form {
     padding: 30px 20px;
   }
+}
+/* Select Service Styling */
+.contact .php-email-form select.form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  color: var(--default-color);
+  padding: 12px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: 0.3s;
+  background-image: linear-gradient(45deg, transparent 50%, var(--accent-color) 50%),
+                    linear-gradient(135deg, var(--accent-color) 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+                       calc(100% - 15px) calc(1em + 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.contact .php-email-form select.form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 80%);
+  outline: none;
+}
+
+.contact .php-email-form select.form-control option {
+  background: var(--surface-color);
+  color: var(--default-color);
 }
 
 /*--------------------------------------------------------------
