@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Testimonials | Black Wolves Marketers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Inter", sans-serif; }
+    body {
+      background: #0d0d0d;
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    header {
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #191919;
+      background: linear-gradient(0deg, rgba(0,0,0,0.3), transparent);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    header h1 { font-size: 1.25rem; font-weight: 700; color: #fff; }
+    header nav a {
+      color: #cfcfcf;
+      text-decoration: none;
+      margin-left: 22px;
+      font-weight: 600;
+      transition: color 0.18s ease;
+    }
+    header nav a:hover { color: #39C3ef; }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+    .hero h2 {
+      font-size: 2.4rem;
+      color: #fff;
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
+    }
+    .hero p {
+      color: #bfbfbf;
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      padding: 48px 60px 80px;
+    }
+
+    .testimonial-card {
+      background: linear-gradient(180deg, #0f0f0f 0%, #131313 100%);
+      border: 1px solid #1b1b1b;
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+      transition: transform 0.3s ease, border-color 0.2s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.5s forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: #39C3ef;
+      box-shadow: 0 10px 25px rgba(255, 59, 59, 0.06);
+    }
+
+    .testimonial-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 14px;
+      border: 2px solid #39C3ef;
+    }
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .testimonial-role {
+      font-size: 0.9rem;
+      color: #a9a9a9;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-text {
+      color: #d0d0d0;
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    footer {
+      text-align: center;
+      color: #888;
+      padding: 36px 0;
+      border-top: 1px solid #191919;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 720px) {
+      header { padding: 16px 18px; }
+      .hero { padding: 40px 16px 16px; }
+      .testimonials { padding: 30px 16px 60px; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Black Wolves Marketers</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="#" style="color:#39C3ef;">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>What Our Clients Say</h2>
+    <p>Real feedback from people who trusted us to transform their brands and grow their businesses.</p>
+  </section>
+
+  <section class="testimonials" id="testimonials"></section>
+
+  <footer>© 2025 Black Wolves Marketers. All rights reserved.</footer>
+
+  <script>
+    const testimonialsData = [
+      {
+        name: "Aarav Mehta",
+        role: "Founder, HexaTech",
+        img: "https://randomuser.me/api/portraits/men/32.jpg",
+        text: "Black Wolves transformed our brand presence. Their UI/UX and marketing team nailed the project beyond expectations."
+      },
+      {
+        name: "Sophia D’Souza",
+        role: "Marketing Lead, UrbanAura",
+        img: "https://randomuser.me/api/portraits/women/45.jpg",
+        text: "Their digital marketing strategy increased our conversion rate by 150% in just two months. Truly impressive!"
+      },
+      {
+        name: "Ravi Patel",
+        role: "CEO, Finverse",
+        img: "https://randomuser.me/api/portraits/men/68.jpg",
+        text: "Working with their web dev team was effortless. Clean code, excellent communication, and great turnaround time."
+      },
+      {
+        name: "Elena Martin",
+        role: "Creative Director, Nova Media",
+        img: "https://randomuser.me/api/portraits/women/21.jpg",
+        text: "Their brand identity design completely redefined our visual presence. Clients instantly recognize us now."
+      },
+      {
+        name: "Karan Verma",
+        role: "Product Manager, Xplor Labs",
+        img: "https://randomuser.me/api/portraits/men/43.jpg",
+        text: "Professional, punctual, and passionate — that’s Black Wolves. Their analytics and data insights changed our approach."
+      },
+      {
+        name: "Isabella Khan",
+        role: "Owner, Glow Boutique",
+        img: "https://randomuser.me/api/portraits/women/33.jpg",
+        text: "Loved the mobile app they developed. Smooth UX, fast performance, and it helped us connect directly with our customers."
+      },
+      {
+        name: "Aditya Rao",
+        role: "CTO, CloudSync",
+        img: "https://randomuser.me/api/portraits/men/56.jpg",
+        text: "Security and scalability were top priorities for us. Black Wolves handled both perfectly. Highly recommend them!"
+      },
+      {
+        name: "Mia Fernandez",
+        role: "Entrepreneur",
+        img: "https://randomuser.me/api/portraits/women/62.jpg",
+        text: "From SEO to content marketing, every strategy was spot-on. My traffic skyrocketed thanks to their expertise."
+      },
+      {
+        name: "Liam Anderson",
+        role: "Startup Founder",
+        img: "https://randomuser.me/api/portraits/men/29.jpg",
+        text: "I’ve worked with multiple agencies, but none match the creativity and discipline of Black Wolves. Absolute legends!"
+      },
+      {
+        name: "Priya Sharma",
+        role: "CMO, VisionTech",
+        img: "https://randomuser.me/api/portraits/women/14.jpg",
+        text: "They care about results — not just deliverables. Our brand feels premium now, and customers notice it too."
+      }
+    ];
+
+    const container = document.getElementById('testimonials');
+    container.innerHTML = testimonialsData.map((t, i) => `
+      <div class="testimonial-card" style="animation-delay:${i * 100}ms">
+        <div class="testimonial-avatar"><img src="${t.img}" alt="${t.name}"></div>
+        <div class="testimonial-name">${t.name}</div>
+        <div class="testimonial-role">${t.role}</div>
+        <div class="testimonial-text">${t.text}</div>
+      </div>
+    `).join('');
+  </script>
+</body>
+</html>

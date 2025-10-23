@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Service Details | Black Wolves Marketers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset & base */
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Inter", sans-serif; }
+    html,body { height: 100%; background:#0d0d0d; color:#fff; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    a { color: inherit; }
+
+    /* Header */
+    header {
+      padding: 20px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #191919;
+      background: linear-gradient(0deg, rgba(0,0,0,0.3), transparent);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    header h1 { font-size:1.25rem; font-weight:700; color:#fff; letter-spacing:0.4px; }
+    header nav a { color:#cfcfcf; text-decoration:none; margin-left:22px; font-weight:600; transition: color .18s ease; }
+    header nav a:hover { color:#39C3ef; }
+
+    /* Back button */
+    .back-btn {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin:30px 60px 0;
+      padding:10px 18px;
+      background:#161616;
+      color:#39C3ef;
+      text-decoration:none;
+      border:1px solid #39C3ef;
+      border-radius:10px;
+      font-weight:600;
+      transition: all .2s ease;
+      width: fit-content;
+    }
+    .back-btn:hover { background:#39C3ef; color:#fff; transform: translateY(-3px); }
+
+    /* Hero */
+    .hero {
+      text-align:center;
+      padding:56px 20px 28px;
+    }
+    .hero h2 { font-size:2.4rem; color:#fff; margin-bottom:10px; letter-spacing:0.2px; }
+    .hero p { color:#bfbfbf; max-width:820px; margin:0 auto; font-size:1rem; }
+
+    /* Grid */
+    .service-details {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:28px;
+      padding:48px 60px 80px;
+    }
+
+    .detail-box {
+      background: linear-gradient(180deg, #0f0f0f 0%, #131313 100%);
+      border:1px solid #1b1b1b;
+      border-radius:16px;
+      padding:26px;
+      transition: transform .28s cubic-bezier(.2,.9,.2,1), border-color .18s ease, box-shadow .18s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp .45s forwards;
+    }
+
+    /* small staggered animation via inline style injection */
+    @keyframes fadeUp {
+      to { opacity:1; transform: translateY(0); }
+    }
+
+    .detail-box h3 { color:#39C3ef; font-size:1.12rem; margin-bottom:10px; font-weight:700; }
+    .detail-box p { color:#d0d0d0; font-size:0.95rem; line-height:1.45; }
+
+    .detail-box:hover { transform: translateY(-8px) scale(1.01); border-color:#39C3ef; box-shadow: 0 12px 28px rgba(255,59,59,0.06); }
+
+    /* small caption under boxes */
+    .detail-sub { margin-top:12px; font-size:0.9rem; color:#a9a9a9; }
+
+    footer { text-align:center; color:#888; padding:36px 0; border-top:1px solid #191919; font-size:0.9rem; }
+
+    /* responsive tweaks */
+    @media (max-width:720px) {
+      header { padding:16px 18px; }
+      .back-btn { margin:20px 18px 0; display:inline-block; }
+      .hero { padding:36px 16px 20px; }
+      .service-details { padding:26px 16px 60px; gap:18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Black Wolves Marketers</h1>
+    <nav>
+      <a href="BlackWolvesMarketers.html">Home</a>
+      <a href="BlackWolvesMarketers.html#services" style="color:#39C3ef">Services</a>
+      <a href="BlackWolvesMarketers.html#pricing">Pricing</a>
+      <a href="BlackWolvesMarketers.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Back Button -->
+  <a href="BlackWolvesMarketers.html#services" class="back-btn">← Back to Services</a>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2 id="service-title">Loading...</h2>
+    <p id="service-description"></p>
+  </section>
+
+  <!-- Dynamic Service Details -->
+  <section class="service-details" id="service-details"></section>
+
+  <footer>
+    © 2025 Black Wolves Marketers. All rights reserved.
+  </footer>
+
+  <script>
+    /* ====== Services data ======
+       Use these exact keys in your Explore links:
+         ?service=uiux
+         ?service=development
+         ?service=seo
+         ?service=marketing
+         ?service=brand
+         ?service=mobile
+         ?service=analytics
+         ?service=security
+    ================================== */
+
+    const servicesData = {
+      uiux: {
+        title: "UI/UX Design",
+        description: "We create intuitive, user-centered interfaces that boost engagement and enhance user experiences. Every design decision is guided by data, usability, and innovation.",
+        details: [
+          { title: "Wireframing & Prototyping", text: "Interactive prototypes and detailed wireframes visualize ideas and ensure functionality before development starts." },
+          { title: "User Research", text: "We analyze user behavior and needs to craft experiences that truly connect." },
+          { title: "Responsive Design", text: "Designs that adapt perfectly across devices — mobile-first and accessibility-aware." },
+          { title: "Usability Testing", text: "Iterative testing and feedback loops to refine flows and remove friction." }
+        ]
+      },
+
+      development: {
+        title: "Web Development",
+        description: "Fast, secure, and scalable websites & apps built with modern stacks and best practices to drive conversions and delight users.",
+        details: [
+          { title: "Frontend Development", text: "High-performance interfaces using React, Next.js, or Vue with attention to accessibility and SEO." },
+          { title: "Backend & APIs", text: "Robust server logic, REST/GraphQL APIs, and database design for reliability and scale." },
+          { title: "E-commerce & Integrations", text: "Payment gateways, inventory systems, and third-party integrations tailored to your business." },
+          { title: "Maintenance & DevOps", text: "CI/CD, monitoring and proactive maintenance to keep your product secure and fast." }
+        ]
+      },
+
+      seo: {
+        title: "SEO Services",
+        description: "Holistic SEO strategies that increase visibility, organic traffic, and sustained growth for your site and brand.",
+        details: [
+          { title: "Keyword Strategy", text: "Targeted research to prioritize high-value terms that match user intent and conversion goals." },
+          { title: "On-Page & Technical SEO", text: "Optimizing content, site structure, performance, and schema to improve rankings." },
+          { title: "Content Optimization", text: "Content planning and execution to rank for competitive queries and capture traffic." },
+          { title: "Reporting & Iteration", text: "Regular analytics-driven reporting and action plans to grow performance month-over-month." }
+        ]
+      },
+
+      marketing: {
+        title: "Digital Marketing",
+        description: "Performance-driven campaigns that build brand presence and convert audiences into loyal customers.",
+        details: [
+          { title: "Social Media Strategy", text: "Platform-tailored campaigns to build engagement and brand affinity." },
+          { title: "Paid Advertising (PPC)", text: "ROI-focused ad campaigns across search and social with continuous optimization." },
+          { title: "Email & Automation", text: "Personalized email journeys to nurture leads and increase LTV." },
+          { title: "Content Marketing", text: "Compelling content that educates, entertains, and converts your target audience." }
+        ]
+      },
+
+      /* === New ones requested === */
+      brand: {
+        title: "Brand Identity",
+        description: "We build memorable brand identities — logos, voice, and systems that make your business instantly recognizable and trusted.",
+        details: [
+          { title: "Logo & Visual Language", text: "Distinctive logo design and a visual language that reflects your brand values and market position." },
+          { title: "Brand Voice & Messaging", text: "Clear positioning, taglines, and messaging frameworks that speak to your ideal customers." },
+          { title: "Brand Guidelines", text: "Comprehensive guidelines (color, typography, usage) for consistent application across touchpoints." },
+          { title: "Collateral & Assets", text: "Design of business cards, pitch decks, social kits, and other brand assets for consistent presentation." }
+        ]
+      },
+
+      mobile: {
+        title: "Mobile Apps",
+        description: "Design and build native and cross-platform mobile apps focused on performance, great UX, and measurable business outcomes.",
+        details: [
+          { title: "iOS & Android Development", text: "Native apps where performance matters — Swift for iOS and Kotlin for Android (or native alternatives)." },
+          { title: "Cross-Platform Solutions", text: "React Native / Flutter solutions for faster time-to-market with near-native performance." },
+          { title: "App Store Strategy", text: "ASO, store listing optimization, and release pipelines to maximize discoverability and installs." },
+          { title: "Mobile Analytics & Optimization", text: "Monitoring, crash analytics, and A/B tests to improve retention and engagement." }
+        ]
+      },
+
+      analytics: {
+        title: "Analytics & Data",
+        description: "Turn data into decisions — analytics setup, dashboards, and tracking that reveal what moves your business forward.",
+        details: [
+          { title: "Tracking & Instrumentation", text: "Accurate event and conversion tracking (GA4, Mixpanel, Amplitude) to measure key user journeys." },
+          { title: "Dashboards & Reporting", text: "Custom dashboards for marketing, product, and exec-level KPIs." },
+          { title: "Funnel & Cohort Analysis", text: "Understand drop-offs and retention to prioritize high-impact product changes." },
+          { title: "Data-Driven Growth", text: "Experimentation frameworks and measurement plans to support growth initiatives." }
+        ]
+      },
+
+      security: {
+        title: "Security & Compliance",
+        description: "Protect your product and customers with security best practices, audits, and compliance guidance.",
+        details: [
+          { title: "Security Audits", text: "Code reviews, dependency checks, and penetration testing to identify and fix vulnerabilities." },
+          { title: "Authentication & Authorization", text: "Secure auth flows, token management, and role-based access controls." },
+          { title: "Data Privacy & Compliance", text: "Help with GDPR/CCPA considerations, secure data handling, and privacy-first design." },
+          { title: "Ongoing Monitoring", text: "Threat detection, logging, incident response planning, and regular security updates." }
+        ]
+      }
+    };
+
+    /* --- Read URL param and render content --- */
+    const params = new URLSearchParams(window.location.search);
+    const key = (params.get('service') || '').toLowerCase(); // normalize
+    const service = servicesData[key];
+
+    const titleEl = document.getElementById('service-title');
+    const descEl = document.getElementById('service-description');
+    const detailsEl = document.getElementById('service-details');
+
+    if (service) {
+      titleEl.textContent = service.title;
+      descEl.textContent = service.description;
+
+      // add boxes with small staggered animation delay
+      detailsEl.innerHTML = service.details.map((d, i) => {
+        // inline style for stagger
+        const delay = (i * 80) + 120; // ms
+        return `
+          <div class="detail-box" style="animation-delay:${delay}ms">
+            <h3>${escapeHtml(d.title)}</h3>
+            <p>${escapeHtml(d.text)}</p>
+          </div>
+        `;
+      }).join('');
+    } else {
+      titleEl.textContent = "Service Not Found";
+      descEl.textContent = "The service you requested doesn't exist or the link is incorrect. You will be redirected back to Services.";
+      detailsEl.innerHTML = "";
+      // optional redirect after short delay
+      setTimeout(() => { window.location.href = 'services.html'; }, 3000);
+    }
+
+    /* Simple HTML escaper to avoid accidental injection if you later change content */
+    function escapeHtml(str) {
+      return String(str)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+  </script>
+</body>
+</html>
