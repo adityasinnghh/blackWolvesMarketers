@@ -46,18 +46,63 @@
         <h1 class="sitename">Black Wolves Marketers</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#Packages">Packages</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+      <!-- Your existing nav -->
+<nav id="navmenu" class="navmenu">
+  <ul>
+    <li><a href="#hero" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#Packages">Packages</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
+
+<!-- Add this CSS -->
+<style>
+  .navmenu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.4s ease, opacity 0.4s ease;
+    background-color: rgba(0, 0, 0, 0.85); /* optional: translucent bg */
+    backdrop-filter: blur(8px); /* gives a nice glassy effect */
+  }
+
+  .navmenu.hidden {
+    top: -80px; /* adjust based on your navbar height */
+    opacity: 0;
+  }
+
+  .navmenu.visible {
+    top: 0;
+    opacity: 1;
+  }
+</style>
+
+<!-- Add this JS (before </body> or in your main.js) -->
+<script>
+  let lastScrollTop = 0;
+  const navmenu = document.getElementById("navmenu");
+
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down → hide
+      navmenu.classList.remove("visible");
+      navmenu.classList.add("hidden");
+    } else {
+      // Scrolling up → show
+      navmenu.classList.remove("hidden");
+      navmenu.classList.add("visible");
+    }
+
+    lastScrollTop = Math.max(scrollTop, 0);
+  });
+</script>
 
       <a class="btn-getstarted" href="#about">Get Started</a>
 
