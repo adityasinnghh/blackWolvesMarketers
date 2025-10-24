@@ -37,42 +37,48 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <h1 class="sitename">Black Wolves Marketers</h1>
-      </a>
+    <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <!-- Uncomment below if you want to use an image logo -->
+      <!-- <img src="assets/img/logo.webp" alt=""> -->
+      <h1 class="sitename">Black Wolves Marketers</h1>
+    </a>
 
-      <!-- Your existing nav -->
-<nav id="navmenu" class="navmenu">
-  <ul>
-    <li><a href="#hero" class="active">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#Packages">Packages</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-</nav>
+    <!-- Navigation Menu -->
+    <nav id="navmenu" class="navmenu visible">
+      <ul>
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#Packages">Packages</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
 
-<!-- Add this CSS -->
+    <a class="btn-getstarted" href="#about">Get Started</a>
+
+  </div>
+</header>
+
+<!-- Navbar Hide/Show Styles -->
 <style>
-  .navmenu {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+  #header {
     transition: top 0.4s ease, opacity 0.4s ease;
-    background-color: rgba(0, 0, 0, 0.85); /* optional: translucent bg */
-    backdrop-filter: blur(8px); /* gives a nice glassy effect */
+  }
+
+  .navmenu {
+    transition: top 0.4s ease, opacity 0.4s ease;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    width: 100%;
   }
 
   .navmenu.hidden {
-    top: -80px; /* adjust based on your navbar height */
+    top: -80px; /* adjust based on your header height */
     opacity: 0;
   }
 
@@ -82,7 +88,7 @@
   }
 </style>
 
-<!-- Add this JS (before </body> or in your main.js) -->
+<!-- Navbar Scroll Behavior -->
 <script>
   let lastScrollTop = 0;
   const navmenu = document.getElementById("navmenu");
@@ -91,11 +97,11 @@
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop) {
-      // Scrolling down → hide
+      // Scrolling down → hide navbar
       navmenu.classList.remove("visible");
       navmenu.classList.add("hidden");
     } else {
-      // Scrolling up → show
+      // Scrolling up → show navbar
       navmenu.classList.remove("hidden");
       navmenu.classList.add("visible");
     }
@@ -103,11 +109,6 @@
     lastScrollTop = Math.max(scrollTop, 0);
   });
 </script>
-
-      <a class="btn-getstarted" href="#about">Get Started</a>
-
-    </div>
-  </header>
 
   <main class="main">
 
