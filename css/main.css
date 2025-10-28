@@ -396,6 +396,44 @@
   color: #fff;
 }
 
+.service-item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.custom-box {
+  background: linear-gradient(135deg, #111111, #1a1a1a);
+  color: #fff;
+  height: 100%;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.custom-box .icon-wrapper {
+  background: #fff;
+  color: #000;
+}
+
+.read-more {
+  color: var(--bs-primary);
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.read-more:hover i {
+  transform: translateX(4px);
+}
 
 /*--------------------------------------------------------------
 /*--------------------------------------------------------------
