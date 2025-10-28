@@ -137,96 +137,104 @@
          ?service=security
     ================================== */
 
-    const servicesData = {
-      uiux: {
-        title: "UI/UX Design",
-        description: "We create intuitive, user-centered interfaces that boost engagement and enhance user experiences. Every design decision is guided by data, usability, and innovation.",
-        details: [
-          { title: "Wireframing & Prototyping", text: "Interactive prototypes and detailed wireframes visualize ideas and ensure functionality before development starts." },
-          { title: "User Research", text: "We analyze user behavior and needs to craft experiences that truly connect." },
-          { title: "Responsive Design", text: "Designs that adapt perfectly across devices — mobile-first and accessibility-aware." },
-          { title: "Usability Testing", text: "Iterative testing and feedback loops to refine flows and remove friction." }
-        ]
-      },
+   const servicesData = {
+  strategy: {
+    title: "Strategy & Branding",
+    description:
+      "We craft impactful brand strategies and digital identities that connect, inspire, and stand out.",
+    details: [
+      { title: "Brand Strategy", text: "Develop data-backed strategies that define your brand’s voice and positioning." },
+      { title: "Visual Identity", text: "Design cohesive brand visuals that reflect your mission and attract your audience." },
+      { title: "Messaging Framework", text: "Create consistent tone and communication across all touchpoints." },
+      { title: "Market Positioning", text: "Stand out through competitor research and strategic differentiation." },
+    ],
+  },
 
-      development: {
-        title: "Web Development",
-        description: "Fast, secure, and scalable websites & apps built with modern stacks and best practices to drive conversions and delight users.",
-        details: [
-          { title: "Frontend Development", text: "High-performance interfaces using React, Next.js, or Vue with attention to accessibility and SEO." },
-          { title: "Backend & APIs", text: "Robust server logic, REST/GraphQL APIs, and database design for reliability and scale." },
-          { title: "E-commerce & Integrations", text: "Payment gateways, inventory systems, and third-party integrations tailored to your business." },
-          { title: "Maintenance & DevOps", text: "CI/CD, monitoring and proactive maintenance to keep your product secure and fast." }
-        ]
-      },
+  social: {
+    title: "Social Media Marketing",
+    description:
+      "We grow brands on Instagram, Facebook, LinkedIn, and TikTok through creative content and smart strategy.",
+    details: [
+      { title: "Content Creation", text: "High-performing posts, reels, and stories tailored to your audience." },
+      { title: "Ad Campaigns", text: "Run paid campaigns that drive engagement, reach, and conversions." },
+      { title: "Community Management", text: "Engage with your followers and build lasting relationships." },
+      { title: "Performance Analytics", text: "Track, analyze, and optimize for measurable social growth." },
+    ],
+  },
 
-      seo: {
-        title: "SEO Services",
-        description: "Holistic SEO strategies that increase visibility, organic traffic, and sustained growth for your site and brand.",
-        details: [
-          { title: "Keyword Strategy", text: "Targeted research to prioritize high-value terms that match user intent and conversion goals." },
-          { title: "On-Page & Technical SEO", text: "Optimizing content, site structure, performance, and schema to improve rankings." },
-          { title: "Content Optimization", text: "Content planning and execution to rank for competitive queries and capture traffic." },
-          { title: "Reporting & Iteration", text: "Regular analytics-driven reporting and action plans to grow performance month-over-month." }
-        ]
-      },
+  digital: {
+    title: "Digital Marketing",
+    description:
+      "We boost your online visibility through SEO, ads, and campaigns that drive measurable growth.",
+    details: [
+      { title: "SEO Optimization", text: "Improve your search rankings with keyword strategy and technical SEO." },
+      { title: "Paid Advertising", text: "Google, Meta, and display ads optimized for ROI." },
+      { title: "Email Marketing", text: "Automated email flows that nurture leads and increase conversions." },
+      { title: "Campaign Strategy", text: "Integrated campaigns that align with your business goals." },
+    ],
+  },
 
-      marketing: {
-        title: "Digital Marketing",
-        description: "Performance-driven campaigns that build brand presence and convert audiences into loyal customers.",
-        details: [
-          { title: "Social Media Strategy", text: "Platform-tailored campaigns to build engagement and brand affinity." },
-          { title: "Paid Advertising (PPC)", text: "ROI-focused ad campaigns across search and social with continuous optimization." },
-          { title: "Email & Automation", text: "Personalized email journeys to nurture leads and increase LTV." },
-          { title: "Content Marketing", text: "Compelling content that educates, entertains, and converts your target audience." }
-        ]
-      },
+  influencer: {
+    title: "Influencer Marketing",
+    description:
+      "We connect your brand with trusted creators to build awareness, engagement, and authentic growth.",
+    details: [
+      { title: "Influencer Discovery", text: "Find creators who align with your brand voice and audience." },
+      { title: "Collaboration Management", text: "Handle outreach, coordination, and content approvals." },
+      { title: "Campaign Execution", text: "Launch influencer-led campaigns across social platforms." },
+      { title: "ROI Tracking", text: "Measure reach, engagement, and impact with transparent analytics." },
+    ],
+  },
 
-      /* === New ones requested === */
-      brand: {
-        title: "Brand Identity",
-        description: "We build memorable brand identities — logos, voice, and systems that make your business instantly recognizable and trusted.",
-        details: [
-          { title: "Logo & Visual Language", text: "Distinctive logo design and a visual language that reflects your brand values and market position." },
-          { title: "Brand Voice & Messaging", text: "Clear positioning, taglines, and messaging frameworks that speak to your ideal customers." },
-          { title: "Brand Guidelines", text: "Comprehensive guidelines (color, typography, usage) for consistent application across touchpoints." },
-          { title: "Collateral & Assets", text: "Design of business cards, pitch decks, social kits, and other brand assets for consistent presentation." }
-        ]
-      },
+  video: {
+    title: "Video Editing",
+    description:
+      "We craft engaging edits with smooth transitions, sound design, and storytelling that captivate viewers.",
+    details: [
+      { title: "Cinematic Editing", text: "Professional-grade visuals with transitions and pacing that keep audiences hooked." },
+      { title: "Sound Design", text: "Perfectly balanced music and effects that enhance emotion and engagement." },
+      { title: "Reel & Short-Form Editing", text: "Optimized vertical edits for Instagram, TikTok, and YouTube Shorts." },
+      { title: "Color Grading & Titles", text: "Consistent tone and style that strengthens your brand identity." },
+    ],
+  },
 
-      mobile: {
-        title: "Mobile Apps",
-        description: "Design and build native and cross-platform mobile apps focused on performance, great UX, and measurable business outcomes.",
-        details: [
-          { title: "iOS & Android Development", text: "Native apps where performance matters — Swift for iOS and Kotlin for Android (or native alternatives)." },
-          { title: "Cross-Platform Solutions", text: "React Native / Flutter solutions for faster time-to-market with near-native performance." },
-          { title: "App Store Strategy", text: "ASO, store listing optimization, and release pipelines to maximize discoverability and installs." },
-          { title: "Mobile Analytics & Optimization", text: "Monitoring, crash analytics, and A/B tests to improve retention and engagement." }
-        ]
-      },
+  website: {
+    title: "Website Development",
+    description:
+      "We build fast, responsive websites that reflect your brand and convert visitors into loyal customers.",
+    details: [
+      { title: "UI/UX Design", text: "Visually appealing, user-centered designs that enhance engagement." },
+      { title: "Frontend Development", text: "Responsive sites using React, Next.js, or modern stacks." },
+      { title: "CMS & Integrations", text: "Seamless WordPress, Shopify, or custom integrations." },
+      { title: "Optimization", text: "SEO-friendly and performance-tuned for speed and conversions." },
+    ],
+  },
 
-      analytics: {
-        title: "Analytics & Data",
-        description: "Turn data into decisions — analytics setup, dashboards, and tracking that reveal what moves your business forward.",
-        details: [
-          { title: "Tracking & Instrumentation", text: "Accurate event and conversion tracking (GA4, Mixpanel, Amplitude) to measure key user journeys." },
-          { title: "Dashboards & Reporting", text: "Custom dashboards for marketing, product, and exec-level KPIs." },
-          { title: "Funnel & Cohort Analysis", text: "Understand drop-offs and retention to prioritize high-impact product changes." },
-          { title: "Data-Driven Growth", text: "Experimentation frameworks and measurement plans to support growth initiatives." }
-        ]
-      },
+  mobile: {
+    title: "iOS & Android App Development",
+    description:
+      "We design and develop seamless, high-performing mobile apps that engage users across all platforms.",
+    details: [
+      { title: "Native App Development", text: "High-performance iOS and Android apps tailored for your goals." },
+      { title: "Cross-Platform Solutions", text: "Flutter or React Native apps for faster delivery and reduced cost." },
+      { title: "App Store Optimization", text: "Boost visibility with ASO and metadata optimization." },
+      { title: "Maintenance & Updates", text: "Ongoing improvements, bug fixes, and performance tracking." },
+    ],
+  },
 
-      security: {
-        title: "Security & Compliance",
-        description: "Protect your product and customers with security best practices, audits, and compliance guidance.",
-        details: [
-          { title: "Security Audits", text: "Code reviews, dependency checks, and penetration testing to identify and fix vulnerabilities." },
-          { title: "Authentication & Authorization", text: "Secure auth flows, token management, and role-based access controls." },
-          { title: "Data Privacy & Compliance", text: "Help with GDPR/CCPA considerations, secure data handling, and privacy-first design." },
-          { title: "Ongoing Monitoring", text: "Threat detection, logging, incident response planning, and regular security updates." }
-        ]
-      }
-    };
+  analytics: {
+    title: "Analytics & Growth",
+    description:
+      "We analyze data and craft strategies that turn insights into measurable growth and stronger performance.",
+    details: [
+      { title: "Tracking Setup", text: "Implement Google Analytics, Meta Pixel, and other tools for accurate insights." },
+      { title: "Performance Dashboards", text: "Custom reports that highlight trends, KPIs, and campaign results." },
+      { title: "Growth Strategy", text: "Data-driven plans to boost engagement, retention, and sales." },
+      { title: "Conversion Optimization", text: "Identify friction points and improve user journeys." },
+    ],
+  },
+};
+
 
     /* --- Read URL param and render content --- */
     const params = new URLSearchParams(window.location.search);
