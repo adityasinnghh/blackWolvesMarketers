@@ -387,6 +387,38 @@
   background: #0d0d0d;
   color: #fff;
 }
+/* === Clean Blue Border Hover Effect for Packages === */
+.Packages .Packages-box {
+  position: relative;
+  background: #0a0a0a; /* dark background for contrast */
+  border: 2px solid transparent;
+  border-radius: 18px;
+  padding: 35px 25px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.Packages .Packages-box:hover {
+  border-color: #39c3ef; /* crisp blue border */
+  transform: translateY(-6px);
+}
+
+/* Optional animated border outline (subtle sweep) */
+.Packages .Packages-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid #39c3ef;
+  border-radius: 18px;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.Packages .Packages-box:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
 
 .Packages .section-title {
   text-align: center;

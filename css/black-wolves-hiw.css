@@ -1,0 +1,174 @@
+/* === Black Wolves Marketers - How It Works Section (No Glow) === */
+
+.hiw-section {
+  background: #000;
+  color: #fff;
+  padding: 100px 0;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Removed glowing background */
+.hiw-section::before {
+  display: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.hiw-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.hiw-header h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #39c3ef;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.hiw-toggle {
+  display: flex;
+  gap: 15px;
+}
+
+.toggle-btn {
+  background: transparent;
+  border: 1px solid #39c3ef;
+  color: #39c3ef;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+  background: linear-gradient(90deg, #39c3ef, #00fff0);
+  color: #000;
+  box-shadow: none; /* Removed glow */
+}
+
+/* Cards */
+.hiw-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.hiw-card {
+  background: #141414;
+  border: 1px solid rgba(57, 195, 239, 0.2);
+  border-radius: 18px;
+  width: 320px;
+  text-align: center;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  transform: translateY(40px);
+  opacity: 0;
+  transition: all 0.8s ease;
+  box-shadow: none; /* No glow */
+}
+
+.hiw-card.visible {
+  transform: translateY(0);
+  opacity: 1;
+  box-shadow: none; /* No glow */
+}
+
+.hiw-card:hover {
+  transform: translateY(-8px);
+  box-shadow: none; /* No glow */
+}
+
+.hiw-media img,
+.hiw-media video {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  height: 200px;
+}
+
+.hiw-card h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.hiw-card p {
+  color: #bbb;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.hiw-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #39c3ef, #00fff0);
+  color: #000;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  box-shadow: none; /* No glow */
+}
+
+.hiw-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: none; /* No glow */
+}
+
+/* Hidden Section */
+.hidden {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hiw-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .hiw-card {
+    width: 85vw;
+  }
+}
+/* === Hover Highlight Effect === */
+.hiw-card {
+  position: relative;
+  border: 1px solid rgba(57, 195, 239, 0.2);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.hiw-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  transition: border 0.4s ease;
+  pointer-events: none;
+}
+
+.hiw-card:hover::after {
+  border: 2px solid #39c3ef; /* Blue highlight */
+}

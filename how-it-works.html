@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>How it Works | Black Wolves Marketers</title>
+  <link href="images/favicon.ico" rel="icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Inter", sans-serif; }
+    html,body { height: 100%; background:#0d0d0d; color:#fff; }
+    a { color: inherit; }
+
+    header {
+      padding: 20px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #191919;
+      background: linear-gradient(0deg, rgba(0,0,0,0.3), transparent);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+/* === Blue Border Hover Animation for Images === */
+.detail-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.detail-box:hover img {
+  transform: scale(1.03);
+  border: 2px solid #39c3ef; /* Blue border */
+  box-shadow: 0 0 18px rgba(57, 195, 239, 0.35);
+}
+
+
+    header h1 { font-size:1.25rem; font-weight:700; color:#fff; }
+    header nav a { color:#cfcfcf; text-decoration:none; margin-left:22px; font-weight:600; transition: color .18s ease; }
+    header nav a:hover { color:#39C3ef; }
+
+    .back-btn {
+      display:inline-flex; align-items:center; gap:10px;
+      margin:30px 60px 0; padding:10px 18px;
+      background:#161616; color:#39C3ef;
+      text-decoration:none; border:1px solid #39C3ef;
+      border-radius:10px; font-weight:600; transition: all .2s ease;
+    }
+    .back-btn:hover { background:#39C3ef; color:#fff; transform: translateY(-3px); }
+
+    .hero { text-align:center; padding:56px 20px 28px; }
+    .hero h2 { font-size:2.4rem; color:#fff; margin-bottom:10px; }
+    .hero p { color:#bfbfbf; max-width:820px; margin:0 auto; font-size:1rem; }
+
+    .service-details {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:28px;
+      padding:48px 60px 80px;
+    }
+
+    .detail-box {
+      background: linear-gradient(180deg, #0f0f0f 0%, #131313 100%);
+      border:1px solid #1b1b1b; border-radius:16px;
+      padding:26px; transition: transform .28s ease, border-color .18s ease, box-shadow .18s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+      opacity: 0; transform: translateY(14px);
+      animation: fadeUp .45s forwards;
+    }
+    @keyframes fadeUp { to { opacity:1; transform: translateY(0); } }
+
+    .detail-box img {
+      width:100%; height:180px; object-fit:cover;
+      border-radius:12px; margin-bottom:14px;
+      transition: transform .3s ease;
+    }
+    .detail-box:hover img { transform: scale(1.03); }
+
+    .detail-box h3 { color:#39C3ef; font-size:1.12rem; margin-bottom:10px; font-weight:700; }
+    .detail-box p { color:#d0d0d0; font-size:0.95rem; line-height:1.45; }
+
+    .detail-box:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color:#39C3ef;
+      box-shadow: 0 12px 28px rgba(57,195,239,0.15);
+    }
+
+    footer { text-align:center; color:#888; padding:36px 0; border-top:1px solid #191919; font-size:0.9rem; }
+
+    @media (max-width:720px) {
+      header { padding:16px 18px; }
+      .back-btn { margin:20px 18px 0; display:inline-block; }
+      .hero { padding:36px 16px 20px; }
+      .service-details { padding:26px 16px 60px; gap:18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Black Wolves Marketers</h1>
+    <nav>
+      <a href="BlackWolvesMarketers.html">Home</a>
+      <a href="BlackWolvesMarketers.html#services" style="color:#39C3ef">Services</a>
+      <a href="BlackWolvesMarketers.html#Packages">Packages</a>
+      <a href="BlackWolvesMarketers.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <a href="BlackWolvesMarketers.html#how-it-works" class="back-btn">← Back</a>
+
+  <section class="hero">
+    <h2 id="service-title">Loading...</h2>
+    <p id="service-description"></p>
+  </section>
+
+  <section class="service-details" id="service-details"></section>
+
+  <footer>
+    © 2025 Black Wolves Marketers. All rights reserved.
+  </footer>
+
+  <script>
+  /* ==========================
+     Data for all 12 services
+     Keys used by ?service=<key>
+     ========================== */
+  const servicesData = {
+    /* ----- Businesses (6) ----- */
+    "share-vision": {
+      title: "Share Your Vision",
+      description: "We begin by learning your brand story, goals and audience. This foundation lets us design strategies that align with your purpose and scale results.",
+      details: [
+        { title: "Brand Discovery", text: "Workshops and audits to uncover what makes your brand unique.", img: "https://images.unsplash.com/photo-1604145559206-e3bce0040e6d?auto=format&fit=crop&w=1200&q=60" },
+        { title: "Audience Mapping", text: "Precise buyer personas and journey maps so your message hits where it matters.", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=60" },
+      ]
+    },
+
+    "build-launch": {
+      title: "We Build & Launch",
+      description: "From campaigns to landing pages, we craft high-converting assets and push them live with focused launch plans.",
+      details: [
+        { title: "Creative Production", text: "Visuals, copy and motion designed to convert.", img: "https://images.unsplash.com/photo-1556761175-129418cb2dfe?auto=format&fit=crop&w=1200&q=60" },
+        { title: "Campaign Setup", text: "Ad funnels, targeting and tracking built for scale.", img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=60" },
+      ]
+    },
+
+    "track-grow": {
+      title: "Track & Grow",
+      description: "We monitor performance, test variants, and scale the winners — delivering steady growth and measurable ROI.",
+      details: [
+        { title: "Real-time Analytics", text: "Dashboards that show what’s working and why.", img: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?auto=format&fit=crop&w=1200&q=60" },
+        { title: "A/B Testing", text: "Continuous experiments to improve conversion rates.", img: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1200&q=60" },
+      ]
+    },
+
+    "optimize-performance": {
+      title: "Optimize Performance",
+      description: "We refine targeting, creatives, and funnels to lower CPA and increase lifetime value.",
+      details: [
+        { title: "Bid & Budget Strategy", text: "Smart bidding that reduces wasted spend.", img: "https://images.unsplash.com/photo-1605902711622-cfb43c4437d3?auto=format&fit=crop&w=1200&q=60" },
+        { title: "Creative Refreshes", text: "New creative variants to combat ad fatigue.", img: "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=1200&q=60" },
+      ]
+    },
+
+    "expand-reach": {
+      title: "Expand Your Reach",
+      description: "Scale into new channels, influencer partnerships and markets with a tested playbook for expansion.",
+      details: [
+        { title: "Channel Expansion", text: "Identify the next high-potential channels for your brand.", img: "https://images.unsplash.com/photo-1605902711622-cfb43c4437d3?auto=format&fit=crop&w=1200&q=60" },
+        { title: "Influencer Strategy", text: "Match with creators who drive authentic engagement.", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=60" },
+      ]
+    },
+
+    "sustain-innovate": {
+      title: "Sustain & Innovate",
+      description: "Long-term growth requires creativity and iteration — we provide both, plus operational processes to maintain momentum.",
+      details: [
+        { title: "Retention Programs", text: "Drive repeat business with lifecycle marketing.", img: "https://images.unsplash.com/photo-1561408031-94b57be931d0?auto=format&fit=crop&w=1200&q=60" },
+        { title: "Innovation Lab", text: "Test new formats and creative directions to stay ahead.", img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=60" },
+      ]
+    },
+
+    /* ----- Partners (6) ----- */
+    "become-partner": {
+      title: "Become a Partner",
+      description: "Join the Black Wolves network — collaborate, access briefs and grow with top-tier clients and campaigns.",
+      details: [
+        { title: "Partner Onboarding", text: "Clear onboarding, expectations and partnership terms.", img: "https://images.unsplash.com/photo-1560264418-c4445382edbc?auto=format&fit=crop&w=1200&q=60" },
+        { title: "Partner Dashboard", text: "Track briefs, earnings and collaboration status in one place.", img: "https://images.unsplash.com/photo-1581092334607-0d19a2a5aa96?auto=format&fit=crop&w=1200&q=60" },
+      ]
+    },
+
+    "start-creating": {
+      title: "Start Creating",
+      description: "Access assets, campaign guidelines and briefs so you can create brand-aligned work that converts.",
+      details: [
+        { title: "Asset Library", text: "Stock creatives, templates and reference kits to speed production.", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=60" },
+        { title: "Creative Briefs", text: "Receive clear briefs and feedback to produce high-impact work.", img: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1200&q=60" },
+      ]
+    },
+
+    "join-network": {
+      title: "Join Our Network",
+      description: "Collaborate with creators, strategists and developers on campaigns that reach real audiences.",
+      details: [
+        { title: "Collaboration Opportunities", text: "Find projects that match your skills and interests.", img: "https://images.unsplash.com/photo-1600880292089-90e7f1a9b9f8?auto=format&fit=crop&w=1200&q=60" },
+        { title: "Skill Match", text: "We recommend partners for projects that suit your strengths.", img: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=60" },
+      ]
+    },
+
+    "exclusive-insights": {
+      title: "Exclusive Insights",
+      description: "Partners get access to reports, benchmarks and data that inform smarter campaign choices.",
+      details: [
+        { title: "Monthly Reports", text: "Actionable reports with trends and recommendations for partners.", img: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=60" },
+        { title: "Workshops & Training", text: "Live sessions to level-up partner capabilities.", img: "https://images.unsplash.com/photo-1581091870622-2e1b28a2a1fa?auto=format&fit=crop&w=1200&q=60" },
+      ]
+    },
+
+    "partner-campaigns": {
+      title: "Partner Campaigns",
+      description: "Co-branded campaigns that amplify reach for both Black Wolves and partner creators/agencies.",
+      details: [
+        { title: "Co-creation", text: "Ideation sessions to build collaborative campaign concepts.", img: "https://images.unsplash.com/photo-1590608897129-79da98d15943?auto=format&fit=crop&w=1200&q=60" },
+        { title: "Shared Outcomes", text: "Transparent KPIs and revenue/credit sharing models.", img: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=1200&q=60" },
+      ]
+    },
+
+    "scale-together": {
+      title: "Scale Together",
+      description: "Use Black Wolves' processes and client pipeline to scale your offerings and recurring revenue.",
+      details: [
+        { title: "Growth Playbooks", text: "Tried-and-tested plans to scale services and client acquisition.", img: "https://images.unsplash.com/photo-1626882048554-9b38045d9e00?auto=format&fit=crop&w=1200&q=60" },
+        { title: "Infrastructure Support", text: "Operational and technical support to handle larger projects.", img: "https://images.unsplash.com/photo-1518081461904-9acb1f1aba3a?auto=format&fit=crop&w=1200&q=60" },
+      ]
+    },
+  };
+
+  /* Helper: escape output to avoid XSS */
+  function escapeHtml(str) {
+    return String(str)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const key = (params.get("service") || "").toLowerCase();
+    const service = servicesData[key];
+    const titleEl = document.getElementById("service-title");
+    const descEl = document.getElementById("service-description");
+    const detailsEl = document.getElementById("service-details");
+
+    if (service) {
+      titleEl.textContent = service.title;
+      descEl.textContent = service.description;
+      detailsEl.innerHTML = service.details.map((d, i) => {
+        const delay = i * 120 + 100;
+        return `
+          <div class="detail-box" style="animation-delay:${delay}ms">
+            <img src="${d.img}" alt="${escapeHtml(d.title)}" loading="lazy">
+            <h3>${escapeHtml(d.title)}</h3>
+            <p>${escapeHtml(d.text)}</p>
+          </div>`;
+      }).join("");
+    } else {
+      titleEl.textContent = "Service Not Found";
+      descEl.textContent = "The requested service does not exist or the link is incorrect. Redirecting you back to services...";
+      // redirect back to services anchor after short pause
+      setTimeout(() => {
+        window.location.href = "BlackWolvesMarketers.html#services";
+      }, 2200);
+    }
+  });
+  </script>
+</body>
+</html>
