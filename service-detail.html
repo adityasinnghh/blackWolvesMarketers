@@ -7,12 +7,10 @@
   <link href="images/favicon.ico" rel="icon">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* Reset & base */
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Inter", sans-serif; }
-    html,body { height: 100%; background:#0d0d0d; color:#fff; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    html,body { height: 100%; background:#0d0d0d; color:#fff; }
     a { color: inherit; }
 
-    /* Header */
     header {
       padding: 20px 60px;
       display:flex;
@@ -24,72 +22,58 @@
       top: 0;
       z-index: 50;
     }
-    header h1 { font-size:1.25rem; font-weight:700; color:#fff; letter-spacing:0.4px; }
+    header h1 { font-size:1.25rem; font-weight:700; color:#fff; }
     header nav a { color:#cfcfcf; text-decoration:none; margin-left:22px; font-weight:600; transition: color .18s ease; }
     header nav a:hover { color:#39C3ef; }
 
-    /* Back button */
     .back-btn {
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      margin:30px 60px 0;
-      padding:10px 18px;
-      background:#161616;
-      color:#39C3ef;
-      text-decoration:none;
-      border:1px solid #39C3ef;
-      border-radius:10px;
-      font-weight:600;
-      transition: all .2s ease;
-      width: fit-content;
+      display:inline-flex; align-items:center; gap:10px;
+      margin:30px 60px 0; padding:10px 18px;
+      background:#161616; color:#39C3ef;
+      text-decoration:none; border:1px solid #39C3ef;
+      border-radius:10px; font-weight:600; transition: all .2s ease;
     }
     .back-btn:hover { background:#39C3ef; color:#fff; transform: translateY(-3px); }
 
-    /* Hero */
-    .hero {
-      text-align:center;
-      padding:56px 20px 28px;
-    }
-    .hero h2 { font-size:2.4rem; color:#fff; margin-bottom:10px; letter-spacing:0.2px; }
+    .hero { text-align:center; padding:56px 20px 28px; }
+    .hero h2 { font-size:2.4rem; color:#fff; margin-bottom:10px; }
     .hero p { color:#bfbfbf; max-width:820px; margin:0 auto; font-size:1rem; }
 
-    /* Grid */
     .service-details {
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
       gap:28px;
       padding:48px 60px 80px;
     }
 
     .detail-box {
       background: linear-gradient(180deg, #0f0f0f 0%, #131313 100%);
-      border:1px solid #1b1b1b;
-      border-radius:16px;
-      padding:26px;
-      transition: transform .28s cubic-bezier(.2,.9,.2,1), border-color .18s ease, box-shadow .18s ease;
+      border:1px solid #1b1b1b; border-radius:16px;
+      padding:26px; transition: transform .28s ease, border-color .18s ease, box-shadow .18s ease;
       box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-      opacity: 0;
-      transform: translateY(14px);
+      opacity: 0; transform: translateY(14px);
       animation: fadeUp .45s forwards;
     }
+    @keyframes fadeUp { to { opacity:1; transform: translateY(0); } }
 
-    /* small staggered animation via inline style injection */
-    @keyframes fadeUp {
-      to { opacity:1; transform: translateY(0); }
+    .detail-box img {
+      width:100%; height:180px; object-fit:cover;
+      border-radius:12px; margin-bottom:14px;
+      transition: transform .3s ease;
     }
+    .detail-box:hover img { transform: scale(1.03); }
 
     .detail-box h3 { color:#39C3ef; font-size:1.12rem; margin-bottom:10px; font-weight:700; }
     .detail-box p { color:#d0d0d0; font-size:0.95rem; line-height:1.45; }
 
-    .detail-box:hover { transform: translateY(-8px) scale(1.01); border-color:#39C3ef; box-shadow: 0 12px 28px rgba(255,59,59,0.06); }
-
-    /* small caption under boxes */
-    .detail-sub { margin-top:12px; font-size:0.9rem; color:#a9a9a9; }
+    .detail-box:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color:#39C3ef;
+      box-shadow: 0 12px 28px rgba(57,195,239,0.15);
+    }
 
     footer { text-align:center; color:#888; padding:36px 0; border-top:1px solid #191919; font-size:0.9rem; }
 
-    /* responsive tweaks */
     @media (max-width:720px) {
       header { padding:16px 18px; }
       .back-btn { margin:20px 18px 0; display:inline-block; }
@@ -109,16 +93,13 @@
     </nav>
   </header>
 
-  <!-- Back Button -->
   <a href="BlackWolvesMarketers.html#services" class="back-btn">← Back to Services</a>
 
-  <!-- Hero -->
   <section class="hero">
     <h2 id="service-title">Loading...</h2>
     <p id="service-description"></p>
   </section>
 
-  <!-- Dynamic Service Details -->
   <section class="service-details" id="service-details"></section>
 
   <footer>
@@ -126,158 +107,124 @@
   </footer>
 
   <script>
-    /* ====== Services data ======
-       Use these exact keys in your Explore links:
-         ?service=uiux
-         ?service=development
-         ?service=seo
-         ?service=marketing
-         ?service=brand
-         ?service=mobile
-         ?service=analytics
-         ?service=security
-    ================================== */
+  const servicesData = {
+    strategy: {
+      title: "Strategy & Branding",
+      description: "We build your brand’s core foundation — identity, voice, and market strategy that leaves a lasting mark.",
+      details: [
+        { title: "Brand Strategy", text: "Develop powerful brand identities that reflect your values and attract your target market.", img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7" },
+        { title: "Visual Identity", text: "From logo to color palette, we design cohesive visuals that represent your personality.", img: "https://images.unsplash.com/photo-1506084868230-bb9d95c24759" },
+        { title: "Market Research", text: "Understand audience behaviors and competitors to identify opportunities for growth.", img: "https://images.unsplash.com/photo-1521790797524-b2497295b8b4" },
+        { title: "Positioning Strategy", text: "Define where your brand stands in the market and how to rise above competitors.", img: "https://images.unsplash.com/photo-1533750349088-cd871a92f312" },
+      ],
+    },
+    social: {
+      title: "Social Media Marketing",
+      description: "Build engagement, community, and brand loyalty through creative social campaigns and strategic content.",
+      details: [
+        { title: "Content Creation", text: "Produce captivating visuals and storytelling tailored to each platform.", img: "https://images.unsplash.com/photo-1600880292089-90e7f1a9b9f8" },
+        { title: "Ad Campaigns", text: "Run targeted ads that maximize visibility and conversion rates.", img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c" },
+        { title: "Community Management", text: "Interact with followers to foster loyalty and brand trust.", img: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2" },
+        { title: "Performance Analytics", text: "Track reach, impressions, and growth to optimize social strategies.", img: "https://images.unsplash.com/photo-1600861194942-e6c7d1d7f9b2" },
+      ],
+    },
+    digital: {
+      title: "Digital Marketing",
+      description: "Boost visibility and conversions with precision-targeted digital campaigns designed for ROI.",
+      details: [
+        { title: "SEO Optimization", text: "Climb search rankings through on-page and off-page strategies.", img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40" },
+        { title: "Google Ads", text: "Run performance-driven ad campaigns with measurable ROI.", img: "https://images.unsplash.com/photo-1581091012184-5c1b39f4f9c4" },
+        { title: "Email Marketing", text: "Automated flows that build relationships and drive repeat sales.", img: "https://images.unsplash.com/photo-1593642532400-2682810df593" },
+        { title: "Conversion Optimization", text: "Turn clicks into customers with data-backed improvements.", img: "https://images.unsplash.com/photo-1588702547919-26089e690ecc" },
+      ],
+    },
+    influencer: {
+      title: "Influencer Marketing",
+      description: "Connect your brand with creators that inspire trust and reach your ideal audience.",
+      details: [
+        { title: "Influencer Discovery", text: "Find creators whose audiences perfectly match your brand.", img: "https://images.unsplash.com/photo-1611605698323-5e65b8cb0317" },
+        { title: "Collaboration Management", text: "From outreach to content approval, we handle it all.", img: "https://images.unsplash.com/photo-1590608897129-79da98d15943" },
+        { title: "Campaign Execution", text: "Launch authentic campaigns that build awareness and engagement.", img: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21" },
+        { title: "ROI Tracking", text: "Get detailed reports on reach, engagement, and conversion performance.", img: "https://images.unsplash.com/photo-1556761175-4b46a572b786" },
+      ],
+    },
+    video: {
+      title: "Video Editing",
+      description: "Tell your story visually — cinematic edits and high-energy reels that captivate audiences.",
+      details: [
+        { title: "Cinematic Editing", text: "Professional storytelling with dynamic transitions and visuals.", img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d" },
+        { title: "Sound Design", text: "Audio that amplifies emotion and connects with the viewer.", img: "https://images.unsplash.com/photo-1611162616305-c69b3fa7e2c8" },
+        { title: "Short-Form Reels", text: "Fast-paced, viral-style edits for Instagram, TikTok, and Shorts.", img: "https://images.unsplash.com/photo-1602526216032-6e1d5a7f72f2" },
+        { title: "Color Grading", text: "Enhance tone and cinematic appeal with color precision.", img: "https://images.unsplash.com/photo-1611605698323-5e65b8cb0317" },
+      ],
+    },
+    website: {
+      title: "Website Development",
+      description: "Build responsive, SEO-optimized, and high-performing websites that elevate your brand presence.",
+      details: [
+        { title: "UI/UX Design", text: "Beautiful, user-friendly designs that create smooth experiences.", img: "https://images.unsplash.com/photo-1509395176047-4a66953fd231" },
+        { title: "Frontend Development", text: "Modern frameworks like React and Next.js for fast performance.", img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c" },
+        { title: "CMS & Integrations", text: "WordPress, Shopify, or custom systems that scale with you.", img: "https://images.unsplash.com/photo-1556155092-8707de31f9c4" },
+        { title: "Optimization", text: "Ensure fast loading times and higher SEO rankings.", img: "https://images.unsplash.com/photo-1518081461904-9acb1f1aba3a" },
+      ],
+    },
+    mobile: {
+      title: "iOS & Android App Development",
+      description: "We design and develop seamless, high-performance mobile apps that delight users across platforms.",
+      details: [
+        { title: "Native App Development", text: "Custom-built Android and iOS apps for maximum efficiency.", img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8" },
+        { title: "Cross-Platform Solutions", text: "Flutter or React Native for quick, scalable app development.", img: "https://images.unsplash.com/photo-1556157382-97eda2b38b5b" },
+        { title: "App Store Optimization", text: "Improve discoverability with metadata and keyword optimization.", img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c" },
+        { title: "Maintenance & Updates", text: "Continuous support and feature updates for better performance.", img: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9" },
+      ],
+    },
+    analytics: {
+      title: "Analytics & Growth",
+      description: "Make smarter decisions with data-driven insights that unlock new growth opportunities.",
+      details: [
+        { title: "Tracking Setup", text: "Integrate Google Analytics, Meta Pixel, and advanced tracking tools.", img: "https://images.unsplash.com/photo-1556155092-8707de31f9c4" },
+        { title: "Performance Dashboards", text: "Visualize KPIs and ROI through interactive dashboards.", img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d" },
+        { title: "Growth Strategy", text: "Craft targeted campaigns using real behavioral data.", img: "https://images.unsplash.com/photo-1551434678-e076c223a692" },
+        { title: "Conversion Optimization", text: "Analyze user flow and boost engagement across touchpoints.", img: "https://images.unsplash.com/photo-1533750349088-cd871a92f312" },
+      ],
+    },
+  };
 
-   const servicesData = {
-  strategy: {
-    title: "Strategy & Branding",
-    description:
-      "We craft impactful brand strategies and digital identities that connect, inspire, and stand out.",
-    details: [
-      { title: "Brand Strategy", text: "Develop data-backed strategies that define your brand’s voice and positioning." },
-      { title: "Visual Identity", text: "Design cohesive brand visuals that reflect your mission and attract your audience." },
-      { title: "Messaging Framework", text: "Create consistent tone and communication across all touchpoints." },
-      { title: "Market Positioning", text: "Stand out through competitor research and strategic differentiation." },
-    ],
-  },
-
-  social: {
-    title: "Social Media Marketing",
-    description:
-      "We grow brands on Instagram, Facebook, LinkedIn, and TikTok through creative content and smart strategy.",
-    details: [
-      { title: "Content Creation", text: "High-performing posts, reels, and stories tailored to your audience." },
-      { title: "Ad Campaigns", text: "Run paid campaigns that drive engagement, reach, and conversions." },
-      { title: "Community Management", text: "Engage with your followers and build lasting relationships." },
-      { title: "Performance Analytics", text: "Track, analyze, and optimize for measurable social growth." },
-    ],
-  },
-
-  digital: {
-    title: "Digital Marketing",
-    description:
-      "We boost your online visibility through SEO, ads, and campaigns that drive measurable growth.",
-    details: [
-      { title: "SEO Optimization", text: "Improve your search rankings with keyword strategy and technical SEO." },
-      { title: "Paid Advertising", text: "Google, Meta, and display ads optimized for ROI." },
-      { title: "Email Marketing", text: "Automated email flows that nurture leads and increase conversions." },
-      { title: "Campaign Strategy", text: "Integrated campaigns that align with your business goals." },
-    ],
-  },
-
-  influencer: {
-    title: "Influencer Marketing",
-    description:
-      "We connect your brand with trusted creators to build awareness, engagement, and authentic growth.",
-    details: [
-      { title: "Influencer Discovery", text: "Find creators who align with your brand voice and audience." },
-      { title: "Collaboration Management", text: "Handle outreach, coordination, and content approvals." },
-      { title: "Campaign Execution", text: "Launch influencer-led campaigns across social platforms." },
-      { title: "ROI Tracking", text: "Measure reach, engagement, and impact with transparent analytics." },
-    ],
-  },
-
-  video: {
-    title: "Video Editing",
-    description:
-      "We craft engaging edits with smooth transitions, sound design, and storytelling that captivate viewers.",
-    details: [
-      { title: "Cinematic Editing", text: "Professional-grade visuals with transitions and pacing that keep audiences hooked." },
-      { title: "Sound Design", text: "Perfectly balanced music and effects that enhance emotion and engagement." },
-      { title: "Reel & Short-Form Editing", text: "Optimized vertical edits for Instagram, TikTok, and YouTube Shorts." },
-      { title: "Color Grading & Titles", text: "Consistent tone and style that strengthens your brand identity." },
-    ],
-  },
-
-  website: {
-    title: "Website Development",
-    description:
-      "We build fast, responsive websites that reflect your brand and convert visitors into loyal customers.",
-    details: [
-      { title: "UI/UX Design", text: "Visually appealing, user-centered designs that enhance engagement." },
-      { title: "Frontend Development", text: "Responsive sites using React, Next.js, or modern stacks." },
-      { title: "CMS & Integrations", text: "Seamless WordPress, Shopify, or custom integrations." },
-      { title: "Optimization", text: "SEO-friendly and performance-tuned for speed and conversions." },
-    ],
-  },
-
-  mobile: {
-    title: "iOS & Android App Development",
-    description:
-      "We design and develop seamless, high-performing mobile apps that engage users across all platforms.",
-    details: [
-      { title: "Native App Development", text: "High-performance iOS and Android apps tailored for your goals." },
-      { title: "Cross-Platform Solutions", text: "Flutter or React Native apps for faster delivery and reduced cost." },
-      { title: "App Store Optimization", text: "Boost visibility with ASO and metadata optimization." },
-      { title: "Maintenance & Updates", text: "Ongoing improvements, bug fixes, and performance tracking." },
-    ],
-  },
-
-  analytics: {
-    title: "Analytics & Growth",
-    description:
-      "We analyze data and craft strategies that turn insights into measurable growth and stronger performance.",
-    details: [
-      { title: "Tracking Setup", text: "Implement Google Analytics, Meta Pixel, and other tools for accurate insights." },
-      { title: "Performance Dashboards", text: "Custom reports that highlight trends, KPIs, and campaign results." },
-      { title: "Growth Strategy", text: "Data-driven plans to boost engagement, retention, and sales." },
-      { title: "Conversion Optimization", text: "Identify friction points and improve user journeys." },
-    ],
-  },
-};
-
-
-    /* --- Read URL param and render content --- */
+  document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
-    const key = (params.get('service') || '').toLowerCase(); // normalize
+    const key = (params.get("service") || "").toLowerCase();
     const service = servicesData[key];
-
-    const titleEl = document.getElementById('service-title');
-    const descEl = document.getElementById('service-description');
-    const detailsEl = document.getElementById('service-details');
+    const titleEl = document.getElementById("service-title");
+    const descEl = document.getElementById("service-description");
+    const detailsEl = document.getElementById("service-details");
 
     if (service) {
       titleEl.textContent = service.title;
       descEl.textContent = service.description;
-
-      // add boxes with small staggered animation delay
       detailsEl.innerHTML = service.details.map((d, i) => {
-        // inline style for stagger
-        const delay = (i * 80) + 120; // ms
+        const delay = i * 120 + 100;
         return `
           <div class="detail-box" style="animation-delay:${delay}ms">
+            <img src="${d.img}" alt="${escapeHtml(d.title)}" loading="lazy">
             <h3>${escapeHtml(d.title)}</h3>
             <p>${escapeHtml(d.text)}</p>
-          </div>
-        `;
-      }).join('');
+          </div>`;
+      }).join("");
     } else {
       titleEl.textContent = "Service Not Found";
-      descEl.textContent = "The service you requested doesn't exist or the link is incorrect. You will be redirected back to Services.";
-      detailsEl.innerHTML = "";
-      // optional redirect after short delay
-      setTimeout(() => { window.location.href = 'services.html'; }, 3000);
+      descEl.textContent = "The service you requested doesn't exist or the link is incorrect.";
+      setTimeout(() => window.location.href = "BlackWolvesMarketers.html#services", 3000);
     }
+  });
 
-    /* Simple HTML escaper to avoid accidental injection if you later change content */
-    function escapeHtml(str) {
-      return String(str)
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('"', '&quot;')
-        .replaceAll("'", '&#39;');
-    }
+  function escapeHtml(str) {
+    return String(str)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  }
   </script>
 </body>
 </html>

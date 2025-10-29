@@ -60,16 +60,88 @@
 }
 
 /* Hero Section */
-.hero {
+
+/* ===== Hero Section Styling ===== */
+#hero {
   position: relative;
-  width: 100%;
-  height: 100vh;
   overflow: hidden;
   color: #fff;
+  text-align: center;
+  height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+}
+
+/* ===== Video Background ===== */
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+/* ===== Overlay ===== */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+
+/* ===== Glow Text (Gradient + Pulse) ===== */
+.glow-text {
+  font-size: 3rem;
+  font-weight: 700;
+  position: relative;
+  background: linear-gradient(270deg, #39c3ef, #00aaff, #00f6ff, #39c3ef);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientPulse 6s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(57,195,239,0.8),
+               0 0 20px rgba(57,195,239,0.5),
+               0 0 40px rgba(0,255,255,0.4);
+}
+
+/* Gradient + Glow Pulse Sync */
+@keyframes gradientPulse {
+  0% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 8px rgba(57,195,239,0.5),
+                 0 0 16px rgba(57,195,239,0.4),
+                 0 0 32px rgba(0,255,255,0.3);
+  }
+  50% {
+    background-position: 100% 50%;
+    text-shadow: 0 0 25px rgba(57,195,239,1),
+                 0 0 50px rgba(0,255,255,0.8),
+                 0 0 80px rgba(0,170,255,0.7);
+  }
+  100% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 8px rgba(57,195,239,0.5),
+                 0 0 16px rgba(57,195,239,0.4),
+                 0 0 32px rgba(0,255,255,0.3);
+  }
+}
+
+@media (max-width: 768px) {
+  .glow-text {
+    font-size: 2rem;
+  }
 }
 
 /* Video background styling */
