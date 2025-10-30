@@ -42,11 +42,14 @@ It includes sections for businesses, partners, testimonials, packages, and inter
 
 ---
 
-### 👤 Author
+### 👤 Authors
 
-**Aditya Singh** **&** Saksham
-🎯 Front-End Developer & Digital Creator
+**Aditya Singh** 
+🎯 Web Developer & Android app developer
 💼 [GitHub Profile](https://github.com/adityasinnghh)
+
+**Saksham**
+🎯 full stack developer
 💼 [GitHub Profile](https://github.com/heyysaksham)
 
 ---
