@@ -57,6 +57,3 @@ It includes sections for businesses, partners, testimonials, packages, and inter
 This project is open source and available under the **MIT License**.
 
 ---
-
-Would you like me to make a **GitHub-badged version** (with shields.io badges for HTML, CSS, JS, GitHub Pages, License, etc.)?
-It gives the README a more professional open-source look.
