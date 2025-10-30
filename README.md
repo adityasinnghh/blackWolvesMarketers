@@ -1,5 +1,3 @@
-Nice — your site looks great, Aditya 👏
-Here’s a **professional, SEO-friendly GitHub README.md** for your *Black Wolves Marketers* website — clean, informative, and perfect for showcasing your project on GitHub.
 
 ---
 
