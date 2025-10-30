@@ -42,49 +42,12 @@ It includes sections for businesses, partners, testimonials, packages, and inter
 
 ---
 
-
----
-
-### ⚙️ Setup & Local Development
-
-1. **Clone this repository**
-
-   ```bash
-   git clone https://github.com/adityasinnghh/blackWolvesMarketers.git
-   ```
-
-2. **Navigate into the folder**
-
-   ```bash
-   cd blackWolvesMarketers
-   ```
-
-3. **Open `index.html` in your browser**
-
-   ```bash
-   open index.html
-   ```
-
-   *(or just drag it into Chrome/Edge/Firefox)*
-
----
-
-### 💡 Future Enhancements
-
-* Add backend (Node.js or Firebase) for contact form submissions
-* Integrate live analytics dashboard
-* Create an admin dashboard for client/project management
-* Add blog section for SEO-driven marketing content
-
-
----
-
 ### 👤 Author
 
-**Aditya Singh**
+**Aditya Singh** **&** Saksham
 🎯 Front-End Developer & Digital Creator
-🌐 [Portfolio](https://adityasinnghh.github.io/blackWolvesMarketers/)
 💼 [GitHub Profile](https://github.com/adityasinnghh)
+💼 [GitHub Profile](https://github.com/heyysaksham)
 
 ---
 
