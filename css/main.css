@@ -390,7 +390,7 @@
 /* === Clean Blue Border Hover Effect for Packages === */
 .Packages .Packages-box {
   position: relative;
-  background: #0a0a0a; /* dark background for contrast */
+  background: #39c3ef; /* dark background for contrast */
   border: 2px solid transparent;
   border-radius: 18px;
   padding: 35px 25px;
