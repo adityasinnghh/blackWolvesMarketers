@@ -54,6 +54,7 @@ It includes sections for businesses, partners, testimonials, packages, and inter
 
 ### 📜 License
 
-This project is not open source  under the **© Black Wolves Marketers**.
+🧾 License: **© 2025 Black Wolves Marketers**. All Rights Reserved.
+
 
 ---
