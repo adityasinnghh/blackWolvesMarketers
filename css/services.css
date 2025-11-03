@@ -210,17 +210,6 @@
     html,body { height: 100%; background:#0d0d0d; color:#fff; }
     a { color: inherit; }
 
-    header {
-      padding: 20px 60px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      border-bottom:1px solid #191919;
-      background: linear-gradient(0deg, rgba(0,0,0,0.3), transparent);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
 
 /* === Blue Border Hover Animation for Images === */
 .detail-box img {
@@ -305,20 +294,7 @@
     html,body { height: 100%; background:#0d0d0d; color:#fff; }
     a { color: inherit; }
 
-    header {
-      padding: 20px 60px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      border-bottom:1px solid #191919;
-      background: linear-gradient(0deg, rgba(0,0,0,0.3), transparent);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-    header h1 { font-size:1.25rem; font-weight:700; color:#fff; }
-    header nav a { color:#cfcfcf; text-decoration:none; margin-left:22px; font-weight:600; transition: color .18s ease; }
-    header nav a:hover { color:#39C3ef; }
+   
 
     .back-btn {
       display:inline-flex; align-items:center; gap:10px;
@@ -375,3 +351,195 @@
       .service-details { padding:26px 16px 60px; gap:18px; }
     }
 
+
+
+
+  
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Inter", sans-serif; }
+    body {
+      background: #0d0d0d;
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    header {
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #191919;
+      background: linear-gradient(0deg, rgba(0,0,0,0.3), transparent);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    header h1 { font-size: 1.25rem; font-weight: 700; color: #fff; }
+    header nav a {
+      color: #cfcfcf;
+      text-decoration: none;
+      margin-left: 22px;
+      font-weight: 600;
+      transition: color 0.18s ease;
+    }
+    header nav a:hover { color: #39C3ef; }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+    .hero h2 {
+      font-size: 2.4rem;
+      color: #fff;
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
+    }
+    .hero p {
+      color: #bfbfbf;
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      padding: 48px 60px 80px;
+    }
+
+    .testimonial-card {
+      background: linear-gradient(180deg, #0f0f0f 0%, #131313 100%);
+      border: 1px solid #1b1b1b;
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+      transition: transform 0.3s ease, border-color 0.2s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.5s forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: #39C3ef;
+      box-shadow: 0 10px 25px rgba(255, 59, 59, 0.06);
+    }
+
+    .testimonial-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 14px;
+      border: 2px solid #39C3ef;
+    }
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .testimonial-role {
+      font-size: 0.9rem;
+      color: #a9a9a9;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-text {
+      color: #d0d0d0;
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    footer {
+      text-align: center;
+      color: #888;
+      padding: 36px 0;
+      border-top: 1px solid #191919;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 720px) {
+      header { padding: 16px 18px; }
+      .hero { padding: 40px 16px 16px; }
+      .testimonials { padding: 30px 16px 60px; gap: 20px; }
+    }
+
+
+    /* Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Inter", sans-serif; }
+    html,body { height:100%; background:#0d0d0d; color:#fff; scroll-behavior:smooth; }
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; display:block; }
+
+   
+
+    /* Container */
+    .container { max-width:1100px; margin:36px auto; padding:0 20px; }
+
+    /* Hero */
+    .hero { padding:28px 0 18px; }
+    .hero h2 { font-size:1.7rem; color:#fff; margin-bottom:8px; }
+    .hero p { color:#bfbfbf; font-size:0.96rem; margin-bottom:6px; }
+
+    /* Terms Grid */
+    .policy {
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:28px;
+      margin-top:18px;
+    }
+
+    /* Article */
+    .policy-article {
+      background: linear-gradient(180deg,#0f0f0f,#131313);
+      border:1px solid #1b1b1b;
+      padding:26px;
+      border-radius:12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      color:#ddd;
+      line-height:1.65;
+      font-size:0.98rem;
+    }
+    .policy-article h3 { color:#39C3ef; margin-top:22px; margin-bottom:10px; font-size:1.05rem; scroll-margin-top:100px; }
+    .policy-article h4 { color:#fff; margin-top:14px; margin-bottom:8px; font-size:0.98rem; scroll-margin-top:100px; }
+    .policy-article p, .policy-article li { color:#cfcfcf; font-size:0.95rem; }
+    .policy-article ul { margin-left:1.05rem; margin-top:8px; }
+    .policy-article li { margin-bottom:8px; }
+
+    /* TOC */
+    .toc {
+      position: sticky;
+      top:96px;
+      align-self:start;
+      background:#0e0e0e;
+      border:1px solid #1b1b1b;
+      padding:20px;
+      border-radius:10px;
+      color:#cfcfcf;
+      font-size:0.95rem;
+    }
+    .toc h4 { color:#fff; margin-bottom:10px; }
+    .toc a { display:block; color:#bdbdbd; padding:6px 0; border-radius:6px; transition: color .2s ease; }
+    .toc a:hover { color:#39C3ef; }
+
+    /* Footer */
+    footer { text-align:center; color:#888; padding:28px 0; border-top:1px solid #191919; margin-top:28px; font-size:0.9rem; }
+
+    /* Responsive */
+    @media (max-width:960px){
+      .policy { grid-template-columns: 1fr; }
+      .toc { position:static; margin-top:10px; }
+    }
