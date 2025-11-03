@@ -385,7 +385,7 @@
 .Packages.section {
   padding: 80px 0;
   background: #0d0d0d;
-  color: #fff;
+  color: #000000;
 }
 /* === Clean Blue Border Hover Effect for Packages === */
 .Packages .Packages-box {

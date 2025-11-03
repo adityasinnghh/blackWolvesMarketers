@@ -390,7 +390,7 @@
     }
     .hero h2 {
       font-size: 2.4rem;
-      color: #fff;
+      color: #0fabdf;
       margin-bottom: 12px;
       letter-spacing: 0.3px;
     }
@@ -613,3 +613,130 @@
       .toc { position:static; margin-top:10px; }
     }
  
+
+
+    
+   /*testemonials section */
+ .hero h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #39C3ef;
+    }
+    .testimonials-h2 {
+      text-align: center;
+      padding: 60px 20px 20px;
+        color: aqua;
+    }
+
+  .testimonials.section {
+    background-color: #0d0d0d;
+    color: #be0808;
+    padding: 80px 0;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-title .subtitle {
+    color: #39C3ef;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .section-title h2 {
+    font-size: 2.3rem;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+
+  .section-title p {
+    color: #aaa;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .testimonial-card {
+    background: #151515;
+    border: 1px solid #222;
+    border-radius: 18px;
+    padding: 25px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    height: 100%;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-6px);
+    border-color: #39C3ef;
+  }
+
+  .testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .testimonial-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 2px solid #39C3ef;
+    margin-right: 15px;
+    object-fit: cover;
+  }
+
+  .testimonial-meta h4 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 0;
+  }
+
+  .testimonial-meta span {
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+
+  .testimonial-card p {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.5;
+  }
+
+  .testimonial-bottom {
+    margin-top: 60px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 40px 30px;
+  }
+
+  .testimonial-bottom h3 {
+    color: #39C3ef;
+    margin-bottom: 10px;
+  }
+
+  .testimonial-bottom p {
+    color: #bbb;
+  }
+
+  .btn.btn-accent {
+    background-color: #39C3ef;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn.btn-accent:hover {
+    background-color: #000;
+  }
+
+  .testimonial-stars {
+    color: #f5c518;
+    margin-top: 12px;
+  }
