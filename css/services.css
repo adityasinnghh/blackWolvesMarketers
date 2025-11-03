@@ -24,6 +24,37 @@
     color: #fff;
     letter-spacing: 0.4px;
   }
+/* ===== Header Logo ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+  
+  padding: 4px;
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/* Mobile scaling */
+@media (max-width: 768px) {
+  .logo img {
+    height: 35px;
+    width: 35px;
+  }
+  .logo span {
+    font-size: 1.2rem;
+  }
+}
 
   /* Desktop Nav */
   nav {
