@@ -543,3 +543,73 @@
       .policy { grid-template-columns: 1fr; }
       .toc { position:static; margin-top:10px; }
     }
+
+
+
+  
+    /* Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Inter", sans-serif; }
+    html,body { height:100%; background:#0d0d0d; color:#fff; scroll-behavior:smooth; }
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; display:block; }
+
+    /* Header */
+  
+    /* Container */
+    .container { max-width:1100px; margin:36px auto; padding:0 20px; }
+
+    /* Hero */
+    .hero { padding:28px 0 18px; }
+    .hero h2 { font-size:1.7rem; color:#fff; margin-bottom:8px; }
+    .hero p { color:#bfbfbf; font-size:0.96rem; margin-bottom:6px; }
+
+    /* Policy grid */
+    .policy {
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:28px;
+      margin-top:18px;
+    }
+
+    /* Article */
+    .policy-article {
+      background: linear-gradient(180deg,#0f0f0f,#131313);
+      border:1px solid #1b1b1b;
+      padding:26px;
+      border-radius:12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      color:#ddd;
+      line-height:1.65;
+      font-size:0.98rem;
+    }
+    .policy-article h3 { color:#39C3ef; margin-top:22px; margin-bottom:10px; font-size:1.05rem; scroll-margin-top:100px; }
+    .policy-article h4 { color:#fff; margin-top:14px; margin-bottom:8px; font-size:0.98rem; scroll-margin-top:100px; }
+    .policy-article p, .policy-article li { color:#cfcfcf; font-size:0.95rem; }
+    .policy-article ul { margin-left:1.05rem; margin-top:8px; }
+    .policy-article li { margin-bottom:8px; }
+
+    /* TOC */
+    .toc {
+      position: sticky;
+      top:96px;
+      align-self:start;
+      background:#0e0e0e;
+      border:1px solid #1b1b1b;
+      padding:20px;
+      border-radius:10px;
+      color:#cfcfcf;
+      font-size:0.95rem;
+    }
+    .toc h4 { color:#fff; margin-bottom:10px; }
+    .toc a { display:block; color:#bdbdbd; padding:6px 0; border-radius:6px; transition: color .2s ease; }
+    .toc a:hover { color:#39C3ef; }
+
+    /* Footer */
+    footer { text-align:center; color:#888; padding:28px 0; border-top:1px solid #191919; margin-top:28px; font-size:0.9rem; }
+
+    /* Responsive */
+    @media (max-width:960px){
+      .policy { grid-template-columns: 1fr; }
+      .toc { position:static; margin-top:10px; }
+    }
+ 
