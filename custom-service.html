@@ -10,108 +10,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
-  <style>
-  body {
-    background-color: #0d0d0d;
-    color: #f5f5f5;
-    font-family: "Poppins", sans-serif;
-    line-height: 1.8;
-  }
-
-   header {
-      padding: 20px 60px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      border-bottom:1px solid #191919;
-      background: linear-gradient(0deg, rgba(0,0,0,0.3), transparent);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-    header h1 { font-size:1.25rem; font-weight:700; color:#fff; letter-spacing:0.4px; }
-    header nav a { color:#cfcfcf; text-decoration:none; margin-left:22px; font-weight:600; transition: color .18s ease; }
-    header nav a:hover { color:#39C3ef; }
-  .service-block {
-    background: #121212;
-    border-radius: 20px;
-    padding: 45px;
-    margin-bottom: 80px;
-    border: 1px solid #1f1f1f;
-    transition: 0.3s;
-  }
-  .custom-header {
-      background: linear-gradient(to right, #111, #1b1b1b);
-      text-align: center;
-      padding: 80px 20px;
-      color: #fff;
-    }
-    .custom-header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #39c3ef;
-    }
-    .custom-header p {
-      max-width: 700px;
-      margin: 15px auto;
-      color: #ccc;
-    }
-
-
-
-  /* Smaller image styling */
-  .service-block img {
-    width: 60%;
-    max-width: 600px;
-    display: block;
-    margin: 0 auto 25px auto;
-    border-radius: 15px;
-  }
-
-  .service-block h3 {
-    color: #39c3ef;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    text-align: center;
-  }
-
-  .service-block p {
-    color: #d9d9d9;
-    margin-bottom: 18px;
-    text-align: justify;
-  }
-
-  .back-btn {
-    text-align: center;
-    margin: 60px 0;
-  }
-
-  .back-btn a {
-    background: #39c3ef;
-    color: #0d0d0d;
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-  }
-
-  .back-btn a:hover {
-    background: #2da7cc;
-  }
-
-  /* Responsive: make images larger on small screens */
-  @media (max-width: 768px) {
-    .service-block img {
-      width: 90%;
-    }
-  }
-</style>
-
+  <link href="css/services.css" rel="stylesheet">
 </head>
 
 <body>
-<header>
+  <header>
     <h1>Black Wolves Marketers</h1>
     <nav>
       <a href="BlackWolvesMarketers.html">Home</a>
@@ -119,6 +22,19 @@
       <a href="BlackWolvesMarketers.html#Packages">Packages</a>
       <a href="BlackWolvesMarketers.html#contact">Contact</a>
     </nav>
+
+    <!-- Mobile Toggle -->
+    <button class="nav-toggle" id="nav-toggle">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="BlackWolvesMarketers.html">Home</a>
+      <a href="BlackWolvesMarketers.html#services">Services</a>
+      <a href="BlackWolvesMarketers.html#Packages">Packages</a>
+      <a href="BlackWolvesMarketers.html#contact">Contact</a>
+    </div>
   </header>
 
   <section class="custom-header">
@@ -131,105 +47,63 @@
     <div class="service-block">
       <img src="images/mobile-app.png" alt="Mobile App Development">
       <h3>📱 Mobile App Development</h3>
-      <p>
-        We create sleek, fast, and engaging mobile apps tailored to your audience and business goals. Whether it's an e-commerce platform, educational app, or custom enterprise solution, our team focuses on design, usability, and smooth performance.
-      </p>
-      <p>
-        Every app we build goes through a complete lifecycle — from wireframing and UI design to backend integration, deployment, and analytics setup. We use frameworks like Flutter, React Native, and Kotlin to ensure consistent performance across Android and iOS.
-      </p>
-      <p>
-        We also emphasize scalability and security — meaning your app is future-ready, GDPR-compliant, and built with robust architecture that can handle thousands of users. With built-in analytics, you can track real user behavior and optimize accordingly.
-      </p>
+      <p>We create sleek, fast, and engaging mobile apps tailored to your audience and business goals. Whether it's an e-commerce platform, educational app, or custom enterprise solution, our team focuses on design, usability, and smooth performance.</p>
+      <p>Every app we build goes through a complete lifecycle — from wireframing and UI design to backend integration, deployment, and analytics setup. We use frameworks like Flutter, React Native, and Kotlin to ensure consistent performance across Android and iOS.</p>
+      <p>We also emphasize scalability and security — meaning your app is future-ready, GDPR-compliant, and built with robust architecture that can handle thousands of users. With built-in analytics, you can track real user behavior and optimize accordingly.</p>
     </div>
 
     <!-- Website Design & Development -->
     <div class="service-block">
       <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Website Design & Development">
       <h3>🌐 Website Design & Development</h3>
-      <p>
-        Your website is your brand’s first impression — we make it unforgettable. From bold landing pages to complex business platforms, we deliver sites that are both visually stunning and technically flawless.
-      </p>
-      <p>
-        We integrate responsive layouts, SEO-friendly code, and blazing-fast performance to ensure top Google rankings and seamless browsing on all devices. Our development stack includes HTML5, CSS3, JavaScript (React/Next.js), and CMS options like WordPress or Strapi.
-      </p>
-      <p>
-        We also provide ongoing maintenance and optimization, helping your site evolve with your brand. Expect an intuitive dashboard, automated backups, and lightning-fast hosting for peak uptime and conversions.
-      </p>
+      <p>Your website is your brand’s first impression — we make it unforgettable. From bold landing pages to complex business platforms, we deliver sites that are both visually stunning and technically flawless.</p>
+      <p>We integrate responsive layouts, SEO-friendly code, and blazing-fast performance to ensure top Google rankings and seamless browsing on all devices. Our development stack includes HTML5, CSS3, JavaScript (React/Next.js), and CMS options like WordPress or Strapi.</p>
+      <p>We also provide ongoing maintenance and optimization, helping your site evolve with your brand. Expect an intuitive dashboard, automated backups, and lightning-fast hosting for peak uptime and conversions.</p>
     </div>
 
     <!-- Video Editing -->
     <div class="service-block">
       <img src="images/video-editting.png" alt="Video Editing">
       <h3>🎬 Video Editing (YouTube, Reels, Ads)</h3>
-      <p>
-        Our creative editors craft engaging visual stories that resonate. Whether you’re a content creator, brand, or business, we transform your raw footage into polished, captivating videos.
-      </p>
-      <p>
-        From cinematic color grading and motion graphics to energetic transitions and storytelling, we tailor every cut to your brand’s rhythm. We use tools like Premiere Pro, DaVinci Resolve, and After Effects for studio-grade production.
-      </p>
-      <p>
-        You’ll also get optimizations for YouTube, Instagram, and ad platforms — ensuring your content not only looks great but performs well with algorithms. Expect click-worthy visuals, retention-boosting pacing, and dynamic edits.
-      </p>
+      <p>Our creative editors craft engaging visual stories that resonate. Whether you’re a content creator, brand, or business, we transform your raw footage into polished, captivating videos.</p>
+      <p>From cinematic color grading and motion graphics to energetic transitions and storytelling, we tailor every cut to your brand’s rhythm. We use tools like Premiere Pro, DaVinci Resolve, and After Effects for studio-grade production.</p>
+      <p>You’ll also get optimizations for YouTube, Instagram, and ad platforms — ensuring your content not only looks great but performs well with algorithms. Expect click-worthy visuals, retention-boosting pacing, and dynamic edits.</p>
     </div>
 
     <!-- Logo Designing & Branding -->
     <div class="service-block">
       <img src="images/logo-design.png" alt="Logo and Brand Identity">
       <h3>✏️ Logo Designing & Brand Identity</h3>
-      <p>
-        A strong logo is your brand’s signature. We design memorable, versatile logos and complete identity kits that reflect your purpose, tone, and personality.
-      </p>
-      <p>
-        Our creative process includes deep brand discovery, moodboard creation, and multiple design explorations before finalizing a perfect concept. You’ll receive primary and secondary logo variants, typography sets, and social media versions.
-      </p>
-      <p>
-        Along with the logo, we deliver a full brand guideline that defines your color palette, visual tone, and usage standards — ensuring consistency across all platforms and campaigns.
-      </p>
+      <p>A strong logo is your brand’s signature. We design memorable, versatile logos and complete identity kits that reflect your purpose, tone, and personality.</p>
+      <p>Our creative process includes deep brand discovery, moodboard creation, and multiple design explorations before finalizing a perfect concept. You’ll receive primary and secondary logo variants, typography sets, and social media versions.</p>
+      <p>Along with the logo, we deliver a full brand guideline that defines your color palette, visual tone, and usage standards — ensuring consistency across all platforms and campaigns.</p>
     </div>
 
     <!-- Marketing Strategy Consulting -->
     <div class="service-block">
       <img src="https://images.pexels.com/photos/1181353/pexels-photo-1181353.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Marketing Strategy Consulting">
       <h3>📊 Marketing Strategy Consulting</h3>
-      <p>
-        Strategy is the backbone of growth. Our consulting team helps you craft data-driven marketing blueprints that combine creativity with precision.
-      </p>
-      <p>
-        We analyze your brand’s market position, competitors, and audience behavior to define actionable steps for online and offline growth. Each strategy includes measurable KPIs, media planning, and ROI forecasting.
-      </p>
-      <p>
-        Whether you’re launching a new product or repositioning your brand, our strategic insights help you make bold moves confidently and intelligently.
-      </p>
+      <p>Strategy is the backbone of growth. Our consulting team helps you craft data-driven marketing blueprints that combine creativity with precision.</p>
+      <p>We analyze your brand’s market position, competitors, and audience behavior to define actionable steps for online and offline growth. Each strategy includes measurable KPIs, media planning, and ROI forecasting.</p>
+      <p>Whether you’re launching a new product or repositioning your brand, our strategic insights help you make bold moves confidently and intelligently.</p>
     </div>
 
     <!-- Captions & Hashtag Planning -->
     <div class="service-block">
       <img src="images/captions-custom-service.png" alt="Captions & Hashtag Planning">
       <h3>📣 Captions & Hashtag Planning</h3>
-      <p>
-        Words have power — especially on social media. We craft captions that hook your audience within the first line and hashtags that extend your reach exponentially.
-      </p>
-      <p>
-        Using trend analysis and AI-based keyword insights, we generate tailored hashtag clusters per platform (Instagram, TikTok, LinkedIn). Each caption aligns with your brand tone — playful, luxury, or professional — and drives meaningful engagement.
-      </p>
-      <p>
-        The result: more visibility, better retention, and a consistent voice your followers recognize instantly.
-      </p>
+      <p>Words have power — especially on social media. We craft captions that hook your audience within the first line and hashtags that extend your reach exponentially.</p>
+      <p>Using trend analysis and AI-based keyword insights, we generate tailored hashtag clusters per platform (Instagram, TikTok, LinkedIn). Each caption aligns with your brand tone — playful, luxury, or professional — and drives meaningful engagement.</p>
+      <p>The result: more visibility, better retention, and a consistent voice your followers recognize instantly.</p>
     </div>
 
     <!-- Account Setup & Branding Optimization -->
     <div class="service-block">
       <img src="images/acountsetup-services.png" alt="Branding Optimization">
       <h3>🚀 Account Setup & Branding Optimization</h3>
-      <p>
-        Starting from scratch? We’ll set up your entire digital presence from day one — bios, visuals, links, and optimized profiles ready for launch.
-      </p>
-      <p>
-        We design aesthetic feed layouts, create consistent highlight covers, and ensure your brand identity looks cohesive across every platform. Each profile is optimized for discovery using bio keywords, hashtags, and SEO-friendly links.
-      </p>
-      <p>
-        Whether personal or business accounts, we build your foundation for long-term engagement and trust.
-      </p>
+      <p>Starting from scratch? We’ll set up your entire digital presence from day one — bios, visuals, links, and optimized profiles ready for launch.</p>
+      <p>We design aesthetic feed layouts, create consistent highlight covers, and ensure your brand identity looks cohesive across every platform. Each profile is optimized for discovery using bio keywords, hashtags, and SEO-friendly links.</p>
+      <p>Whether personal or business accounts, we build your foundation for long-term engagement and trust.</p>
     </div>
 
     <div class="back-btn">
@@ -238,5 +112,16 @@
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const navToggle = document.getElementById("nav-toggle");
+    const mobileNav = document.getElementById("mobile-nav");
+
+    navToggle.addEventListener("click", () => {
+      mobileNav.classList.toggle("active");
+      const icon = navToggle.querySelector("i");
+      icon.classList.toggle("bi-list");
+      icon.classList.toggle("bi-x");
+    });
+  </script>
 </body>
 </html>
