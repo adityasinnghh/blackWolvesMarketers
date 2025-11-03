@@ -468,6 +468,28 @@
   .btn.btn-accent:hover {
     background-color: #000;
   }
+.explore-btn-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.explore-btn {
+  display: inline-block;
+  background: #39c3ef;
+  color: #000;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+}
+
+.explore-btn:hover {
+  background: #000;
+  color: #fff;
+ 
+}
 
 
 /*Packages section */
@@ -493,22 +515,6 @@
 }
 
 /* Optional animated border outline (subtle sweep) */
-.Packages .Packages-box::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 2px solid #39c3ef;
-  border-radius: 18px;
-  opacity: 0;
-  transform: scale(1.05);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-}
-
-.Packages .Packages-box:hover::after {
-  opacity: 1;
-  transform: scale(1);
-}
 
 .Packages .section-title {
   text-align: center;
@@ -535,12 +541,7 @@
   font-weight: 600;
 }
 
-.Packages-box .price {
-  font-size: 2.4rem;
-  color: #fffffe;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
+
 
 .Packages-box ul {
   list-style: none;
@@ -560,8 +561,8 @@
 
 .Packages-box .btn-buy {
   display: inline-block;
-  background: #39C3ef;
-  color: #fff;
+  background: #fff;
+  color: #000;
   padding: 10px 25px;
   border-radius: 30px;
   font-weight: 500;
@@ -570,8 +571,8 @@
 }
 
 .Packages-box .btn-buy:hover {
-  background: #fff;
-  color: #000;
+  background: #000;
+  color: #fff;
 }
 
 .Packages-box.featured {
@@ -2380,6 +2381,7 @@ section,
   color: var(--heading-color);
 }
 
+
 .services p {
   font-size: 14px;
   line-height: 1.6;
@@ -2388,19 +2390,20 @@ section,
 }
 
 .services .read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--heading-color);
-  font-weight: 600;
-  font-size: 14px;
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
+
 .services .read-more i {
-  font-size: 14px;
-  transition: transform 0.3s ease;
+  background: #000;
+  color: #fff;
 }
 
 .services .cta-box {

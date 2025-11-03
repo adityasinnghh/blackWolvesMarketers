@@ -55,9 +55,23 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
+.toggle-btn:hover {
+  background: #39c3ef;
+  color: #000;
+  box-shadow: none; /* Removed glow */
+}
 .toggle-btn.active {
-  background: linear-gradient(90deg, #39c3ef, #00fff0);
+  background: #39c3ef;
+  border: 1px solid #39c3ef;
+  color: #ffffff;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.toggle-btn.active:hover {
+  background: #00fff0;
   color: #000;
   box-shadow: none; /* Removed glow */
 }
