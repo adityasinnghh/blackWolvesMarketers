@@ -187,3 +187,67 @@
 .hiw-card:hover::after {
   border: 2px solid #39c3ef; /* Blue highlight */
 }
+
+/* Desktop Nav */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+nav a {
+  color: #cfcfcf;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.18s ease;
+}
+
+nav a:hover {
+  color: #39c3ef;
+}
+
+/* Mobile Toggle Button */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile Nav Menu */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #111;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #222;
+  padding: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+}
+
+.mobile-nav a {
+  color: #cfcfcf;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 0;
+  transition: color 0.2s ease;
+  display: block;
+}
+
+.mobile-nav a:hover {
+  color: #39c3ef;
+}
+
+.mobile-nav.active {
+  display: flex;
+  max-height: 250px;
+  padding: 10px 0;
+}
