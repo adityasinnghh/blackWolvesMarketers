@@ -145,6 +145,7 @@
 
 .hiw-btn:hover {
   transform: translateY(-2px);
+  color: #fff;
   box-shadow: none; /* No glow */
 }
 
