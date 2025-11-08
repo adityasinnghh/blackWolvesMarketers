@@ -30,95 +30,101 @@
   window.addEventListener("load", toggleScrolled);
 
   /**
- * ===========================
- *  Enhanced Navigation Script
- *  for Black Wolves Marketers
- * ===========================
- */
+   * ===========================
+   *  Enhanced Navigation Script
+   *  for Black Wolves Marketers
+   * ===========================
+   */
 
-document.addEventListener("DOMContentLoaded", () => {
-  const body = document.body;
-  const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-  const navMenu = document.querySelector("#navmenu");
+  document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+    const navMenu = document.querySelector("#navmenu");
 
-  /** === Toggle Mobile Nav === */
-  function toggleMobileNav() {
-    body.classList.toggle("mobile-nav-active");
-    mobileNavToggleBtn.classList.toggle("bi-list");
-    mobileNavToggleBtn.classList.toggle("bi-x");
-  }
+    /** === Toggle Mobile Nav === */
+    function toggleMobileNav() {
+      body.classList.toggle("mobile-nav-active");
+      mobileNavToggleBtn.classList.toggle("bi-list");
+      mobileNavToggleBtn.classList.toggle("bi-x");
+    }
 
-  /** === Open Nav === */
-  function openMobileNav() {
-    body.classList.add("mobile-nav-active");
-    mobileNavToggleBtn.classList.remove("bi-list");
-    mobileNavToggleBtn.classList.add("bi-x");
-  }
+    /** === Open Nav === */
+    function openMobileNav() {
+      body.classList.add("mobile-nav-active");
+      mobileNavToggleBtn.classList.remove("bi-list");
+      mobileNavToggleBtn.classList.add("bi-x");
+    }
 
-  /** === Close Nav === */
-  function closeMobileNav() {
-    body.classList.remove("mobile-nav-active");
-    mobileNavToggleBtn.classList.add("bi-list");
-    mobileNavToggleBtn.classList.remove("bi-x");
-    document.querySelectorAll(".dropdown-active").forEach((dd) => dd.classList.remove("dropdown-active"));
-  }
+    /** === Close Nav === */
+    function closeMobileNav() {
+      body.classList.remove("mobile-nav-active");
+      mobileNavToggleBtn.classList.add("bi-list");
+      mobileNavToggleBtn.classList.remove("bi-x");
+      document
+        .querySelectorAll(".dropdown-active")
+        .forEach((dd) => dd.classList.remove("dropdown-active"));
+    }
 
-  /** === Toggle button click === */
-  if (mobileNavToggleBtn) {
-    mobileNavToggleBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleMobileNav();
+    /** === Toggle button click === */
+    if (mobileNavToggleBtn) {
+      mobileNavToggleBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleMobileNav();
+      });
+    }
+
+    /** === Hide nav on link click === */
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (body.classList.contains("mobile-nav-active")) {
+          closeMobileNav();
+        }
+      });
     });
-  }
 
-  /** === Hide nav on link click === */
-  navMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      if (body.classList.contains("mobile-nav-active")) {
+    /** === Toggle Dropdowns === */
+    navMenu.querySelectorAll(".toggle-dropdown").forEach((dropdownToggle) => {
+      dropdownToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        const parent = this.closest("li");
+        const dropdown = parent.querySelector(".dropdown");
+
+        if (dropdown.classList.contains("dropdown-active")) {
+          dropdown.classList.remove("dropdown-active");
+          parent.classList.remove("active");
+        } else {
+          // Close others
+          navMenu
+            .querySelectorAll(".dropdown-active")
+            .forEach((dd) => dd.classList.remove("dropdown-active"));
+          navMenu
+            .querySelectorAll(".navmenu li.active")
+            .forEach((li) => li.classList.remove("active"));
+
+          dropdown.classList.add("dropdown-active");
+          parent.classList.add("active");
+        }
+      });
+    });
+
+    /** === Click outside to close mobile nav === */
+    document.addEventListener("click", (e) => {
+      if (
+        body.classList.contains("mobile-nav-active") &&
+        !e.target.closest("#navmenu") &&
+        !e.target.closest(".mobile-nav-toggle")
+      ) {
+        closeMobileNav();
+      }
+    });
+
+    /** === ESC key closes nav === */
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && body.classList.contains("mobile-nav-active")) {
         closeMobileNav();
       }
     });
   });
-
-  /** === Toggle Dropdowns === */
-  navMenu.querySelectorAll(".toggle-dropdown").forEach((dropdownToggle) => {
-    dropdownToggle.addEventListener("click", function (e) {
-      e.preventDefault();
-      const parent = this.closest("li");
-      const dropdown = parent.querySelector(".dropdown");
-
-      if (dropdown.classList.contains("dropdown-active")) {
-        dropdown.classList.remove("dropdown-active");
-        parent.classList.remove("active");
-      } else {
-        // Close others
-        navMenu.querySelectorAll(".dropdown-active").forEach((dd) => dd.classList.remove("dropdown-active"));
-        navMenu.querySelectorAll(".navmenu li.active").forEach((li) => li.classList.remove("active"));
-
-        dropdown.classList.add("dropdown-active");
-        parent.classList.add("active");
-      }
-    });
-  });
-
-  /** === Click outside to close mobile nav === */
-  document.addEventListener("click", (e) => {
-    if (
-      body.classList.contains("mobile-nav-active") &&
-      !e.target.closest("#navmenu") &&
-      !e.target.closest(".mobile-nav-toggle")
-    ) {
-      closeMobileNav();
-    }
-  });
-
-  /** === ESC key closes nav === */
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && body.classList.contains("mobile-nav-active")) {
-      closeMobileNav();
-    }
-  });
-});
 
   /**
    * Preloader
@@ -169,7 +175,18 @@ document.addEventListener("DOMContentLoaded", () => {
   /**
    * Init typed.js
    */
- 
+  const selectTyped = document.querySelector(".typed");
+  if (selectTyped) {
+    let typed_strings = selectTyped.getAttribute("data-typed-items");
+    typed_strings = typed_strings.split(",");
+    new Typed(".typed", {
+      strings: typed_strings,
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 2000,
+    });
+  }
 
   /**
    * Animate the skills items on reveal
@@ -191,7 +208,10 @@ document.addEventListener("DOMContentLoaded", () => {
   /**
    * Initiate glightbox
    */
-  
+  const glightbox = GLightbox({
+    selector: ".glightbox",
+  });
+
   /**
    * Init isotope layout and filters
    */
@@ -209,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
           layoutMode: layout,
           filter: filter,
           sortBy: sort,
-        },
+        }
       );
     });
 
@@ -230,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
               aosInit();
             }
           },
-          false,
+          false
         );
       });
   });
@@ -241,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
       let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim(),
+        swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
 
       if (swiperElement.classList.contains("swiper-tab")) {
@@ -299,4 +319,3 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", navmenuScrollspy);
   document.addEventListener("scroll", navmenuScrollspy);
 })();
-
