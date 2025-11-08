@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog • Black Wolves Marketers</title>
+  <meta name="description" content="Actionable digital marketing insights, tutorials, and case studies from Black Wolves Marketers." />
+  <link rel="icon" href="assets/img/favicon.png" />
+
+  <!-- Canonical & Open Graph -->
+  <link rel="canonical" href="https://blackwolvesmarketers.com/blog.html" />
+  <meta property="og:title" content="Blog • Black Wolves Marketers" />
+  <meta property="og:description" content="Actionable digital marketing insights, tutorials, and case studies from Black Wolves Marketers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://blackwolvesmarketers.com/blog.html" />
+  <meta property="og:image" content="assets/img/og-blog.jpg" />
+
+  <!-- Bootstrap (if your theme already includes it, you can remove these two lines) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+
+  <!-- AOS (Animate On Scroll) optional -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Your main stylesheet (keep this if you already use it across the site) -->
+  <link href="css/services.css" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Fallbacks if your global theme variables aren't present */
+      --surface-color: #0c0c0f;
+      --default-color: #ffffff;
+      --accent: #6c5ce7;
+      --muted: color-mix(in srgb, var(--default-color), transparent 60%);
+    }
+
+    /* Page shell */
+    body {
+      background: #0a0a0d;
+      color: var(--default-color);
+      line-height: 1.6;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    /* Hero */
+    .blog-hero {
+      position: relative;
+      background: radial-gradient(1200px 400px at 20% -10%, rgba(0, 132, 255, 0.35), rgba(108, 92, 231, 0) 60%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.0));
+      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+    }
+
+    .blog-hero .badge {
+      background: color-mix(in srgb, var(--accent), transparent 65%);
+      border: 1px solid color-mix(in srgb, var(--accent), transparent 30%);
+      color: #fff;
+    }
+
+    .search-wrap {
+      background: var(--surface-color);
+      border: 1.5px solid color-mix(in srgb, var(--default-color), transparent 85%);
+      border-radius: 16px;
+      padding: 12px;
+    }
+
+    .search-wrap input[type="search"] {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--default-color);
+    }
+
+    /* Filters */
+    .filter-chip {
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+      color: var(--default-color);
+      background: color-mix(in srgb, var(--default-color), transparent 95%);
+      border-radius: 999px;
+      padding: 8px 14px;
+      text-decoration: none;
+      transition: transform .2s ease, .2s ease, border-color .2s ease;
+      white-space: nowrap;
+    }
+
+    .filter-chip.active,
+    .filter-chip:hover {
+      background: color-mix(in srgb, var(--accent), transparent 80%);
+      border-color: color-mix(in srgb, var(--accent), transparent 50%);
+      transform: translateY(-1px);
+    }
+    /* === Black Wolves Marketers - How It Works Section (No Glow) === */
+
+.hiw-section {
+  background: #000;
+  color: #fff;
+  padding: 100px 0;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Removed glowing background */
+.hiw-section::before {
+  display: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.hiw-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.hiw-header h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #39c3ef;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.hiw-toggle {
+  display: flex;
+  gap: 15px;
+}
+
+.toggle-btn {
+  background: transparent;
+  border: 1px solid #39c3ef;
+  color: #39c3ef;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.toggle-btn:hover {
+  background: #39c3ef;
+  color: #000;
+  box-shadow: none; /* Removed glow */
+}
+.toggle-btn.active {
+  background: #39c3ef;
+  border: 1px solid #39c3ef;
+  color: #ffffff;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  
+/* === Hover Highlight Effect === */
+.hiw-card {
+  position: relative;
+  border: 1px solid rgba(57, 195, 239, 0.2);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.hiw-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  transition: border 0.4s ease;
+  pointer-events: none;
+}
+
+.hiw-card:hover::after {
+  border: 2px solid #39c3ef; /* Blue highlight */
+}
+
+/* Desktop Nav */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+nav a {
+  color: #cfcfcf;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.18s ease;
+}
+
+nav a:hover {
+  color: #39c3ef;
+}
+
+/* Mobile Toggle Button */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile Nav Menu */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #111;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #222;
+  padding: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+}
+
+.mobile-nav a {
+  color: #cfcfcf;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 0;
+  transition: color 0.2s ease;
+  display: block;
+}
+
+.mobile-nav a:hover {
+  color: #39c3ef;
+}
+
+.mobile-nav.active {
+  display: flex;
+  max-height: 250px;
+  padding: 10px 0;
+}
+}
+
+    /* Cards */
+    .post-card {
+      background: var(--surface-color);
+      border: 1.5px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 20px;
+      height: 100%;
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .post-card:hover {
+      transform: translateY(-4px);
+      border-color: color-mix(in srgb, var(--accent), transparent 55%);
+      box-shadow: 0 10px 30px rgba(108, 92, 231, 0.12);
+    }
+
+    .post-thumb {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .post-meta {
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    .post-title {
+      color: var(--default-color);
+      text-decoration: none;
+    }
+
+    .post-title:hover {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Sidebar */
+    .sidebar-card {
+      background: var(--surface-color);
+      border: 1.5px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 16px;
+    }
+
+    /* Pagination */
+    .page-link {
+      background: transparent;
+      border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+      color: var(--default-color);
+    }
+
+    .page-item.active .page-link {
+      background: color-mix(in srgb, var(--accent), transparent 70%);
+      border-color: color-mix(in srgb, var(--accent), transparent 50%);
+    }
+
+    /* Newsletter */
+    .newsletter {
+      background: linear-gradient(180deg, rgba(108, 92, 231, 0.15), rgba(108, 92, 231, 0.04));
+      border: 1.5px solid color-mix(in srgb, var(--accent), transparent 60%);
+      border-radius: 20px;
+    }
+
+    /* Utility */
+    .text-muted-2 {
+      color: var(--muted) !important;
+    }
+  </style>
+</head>
+
+<body>
+ <header>
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+         <img src="images/favicon.png" alt="logo"> 
+        <h1 class="sitename">Black Wolves Marketers</h1>
+      </a>
+    <nav>
+      <a href="BlackWolvesMarketers.html">Home</a>
+      <a href="BlackWolvesMarketers.html#services" style="color:#39C3ef">Services</a>
+      <a href="BlackWolvesMarketers.html#Packages">Packages</a>
+      <a href="BlackWolvesMarketers.html#contact">Contact</a>
+    </nav>
+
+    <!-- Mobile Toggle -->
+    <button class="nav-toggle" id="nav-toggle">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="BlackWolvesMarketers.html">Home</a>
+      <a href="BlackWolvesMarketers.html#services">Services</a>
+      <a href="BlackWolvesMarketers.html#Packages">Packages</a>
+      <a href="BlackWolvesMarketers.html#contact">Contact</a>
+    </div>
+  </header>
+  <!-- Optional: site header include placeholder -->
+  <!--#include file="partials/header.html" -->
+
+  <!-- Hero -->
+  <section class="blog-hero section pb-0">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7" data-aos="fade-right" data-aos-delay="100">
+          <span class="badge rounded-pill mb-3">Insights</span>
+          <h1 class="display-5 fw-bold mb-3">Marketing insights, tutorials & case studies</h1>
+          <p class="mb-4 text-muted-2">We publish deep dives on SEO, performance marketing, social growth, and design systems—everything we learn while scaling brands.</p>
+        </div>
+        <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
+          <div class="search-wrap d-flex align-items-center gap-2">
+            <span class="bi bi-search fs-5"></span>
+            <input type="search" id="blogSearch" class="form-control form-control-lg" placeholder="Search articles, e.g. SEO audit checklist" aria-label="Search blog" />
+            <button class="btn btn-primary px-4" onclick="filterPosts()">Search</button>
+          </div>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <a href="#" class="filter-chip active" data-filter="all" onclick="setFilter(event, 'all')">All</a>
+            <a href="#" class="filter-chip" data-filter="seo" onclick="setFilter(event, 'seo')">SEO</a>
+            <a href="#" class="filter-chip" data-filter="ads" onclick="setFilter(event, 'ads')">Paid Ads</a>
+            <a href="#" class="filter-chip" data-filter="social" onclick="setFilter(event, 'social')">Social</a>
+            <a href="#" class="filter-chip" data-filter="design" onclick="setFilter(event, 'design')">Design</a>
+            <a href="#" class="filter-chip" data-filter="case" onclick="setFilter(event, 'case')">Case Study</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="section">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Main Grid -->
+        <div class="col-lg-8">
+          <div id="postsGrid" class="row g-4">
+            <!-- Post 1 -->
+            <article class="col-md-6 post" data-category="seo" data-title="Ultimate SEO Audit Checklist for 2025">
+              <div class="post-card h-100">
+                <a href="post-seo-audit-2025.html"><img src="" alt="SEO audit checklist" class="post-thumb" loading="lazy" /></a>
+                <div class="p-3 p-md-4">
+                  <div class="d-flex gap-2 align-items-center mb-2 post-meta">
+                    <span class="badge rounded-pill">SEO</span>
+                    <span>•</span>
+                    <time datetime="2025-10-18">Oct 18, 2025</time>
+                    <span>•</span>
+                    <span>8 min read</span>
+                  </div>
+                  <h3 class="h5 mb-2"><a class="post-title" href="post-seo-audit-2025.html">Ultimate SEO Audit Checklist for 2025</a></h3>
+                  <p class="text-muted-2 mb-3">A practical, step‑by‑step process to find technical gaps, content opportunities, and quick wins.</p>
+                  <a href="post-seo-audit-2025.html" class="btn btn-sm btn-outline-light">Read more</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="col-md-6 post" data-category="ads" data-title="Scale Meta Ads with Creative Iterations">
+              <div class="post-card h-100">
+                <a href="post-meta-ads-creatives.html"><img src="assets/img/blog/meta-ads.jpg" alt="Scaling Meta ads with creative testing" class="post-thumb" loading="lazy" /></a>
+                <div class="p-3 p-md-4">
+                  <div class="d-flex gap-2 align-items-center mb-2 post-meta">
+                    <span class="badge rounded-pill">Paid Ads</span>
+                    <span>•</span>
+                    <time datetime="2025-09-09">Sep 9, 2025</time>
+                    <span>•</span>
+                    <span>6 min read</span>
+                  </div>
+                  <h3 class="h5 mb-2"><a class="post-title" href="post-meta-ads-creatives.html">Scale Meta Ads with Creative Iterations</a></h3>
+                  <p class="text-muted-2 mb-3">How to set up an agile creative pipeline that systematically lowers CPA while improving CTR.</p>
+                  <a href="post-meta-ads-creatives.html" class="btn btn-sm btn-outline-light">Read more</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 3 -->
+            <article class="col-md-6 post" data-category="case" data-title="Case Study: 0 → 1M Impressions via Topic Clusters">
+              <div class="post-card h-100">
+                <a href="post-topic-clusters-case.html"><img src="assets/img/blog/topic-clusters.jpg" alt="Case study topic clusters" class="post-thumb" loading="lazy" /></a>
+                <div class="p-3 p-md-4">
+                  <div class="d-flex gap-2 align-items-center mb-2 post-meta">
+                    <span class="badge rounded-pill">Case Study</span>
+                    <span>•</span>
+                    <time datetime="2025-08-02">Aug 2, 2025</time>
+                    <span>•</span>
+                    <span>7 min read</span>
+                  </div>
+                  <h3 class="h5 mb-2"><a class="post-title" href="post-topic-clusters-case.html">Case Study: 0 → 1M Impressions via Topic Clusters</a></h3>
+                  <p class="text-muted-2 mb-3">We rebuilt an editorial map around search intent and doubled organic sessions in 90 days.</p>
+                  <a href="post-topic-clusters-case.html" class="btn btn-sm btn-outline-light">Read more</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 4 -->
+            <article class="col-md-6 post" data-category="social" data-title="Social Content System for Busy Founders">
+              <div class="post-card h-100">
+                <a href="post-social-system.html"><img src="assets/img/blog/social-system.jpg" alt="Social content system" class="post-thumb" loading="lazy" /></a>
+                <div class="p-3 p-md-4">
+                  <div class="d-flex gap-2 align-items-center mb-2 post-meta">
+                    <span class="badge rounded-pill">Social</span>
+                    <span>•</span>
+                    <time datetime="2025-07-12">Jul 12, 2025</time>
+                    <span>•</span>
+                    <span>5 min read</span>
+                  </div>
+                  <h3 class="h5 mb-2"><a class="post-title" href="post-social-system.html">Social Content System for Busy Founders</a></h3>
+                  <p class="text-muted-2 mb-3">A weekly workflow to publish consistently without spending all day on content.</p>
+                  <a href="post-social-system.html" class="btn btn-sm btn-outline-light">Read more</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 5 -->
+            <article class="col-md-6 post" data-category="design" data-title="Design System Tokens for Marketing Sites">
+              <div class="post-card h-100">
+                <a href="post-design-tokens.html"><img src="assets/img/blog/design-tokens.jpg" alt="Design tokens" class="post-thumb" loading="lazy" /></a>
+                <div class="p-3 p-md-4">
+                  <div class="d-flex gap-2 align-items-center mb-2 post-meta">
+                    <span class="badge rounded-pill">Design</span>
+                    <span>•</span>
+                    <time datetime="2025-06-01">Jun 1, 2025</time>
+                    <span>•</span>
+                    <span>9 min read</span>
+                  </div>
+                  <h3 class="h5 mb-2"><a class="post-title" href="post-design-tokens.html">Design System Tokens for Marketing Sites</a></h3>
+                  <p class="text-muted-2 mb-3">Use semantic tokens to scale consistent branding across pages and campaigns.</p>
+                  <a href="post-design-tokens.html" class="btn btn-sm btn-outline-light">Read more</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 6 -->
+            <article class="col-md-6 post" data-category="seo" data-title="Programmatic SEO: Where It Works & Where It Fails">
+              <div class="post-card h-100">
+                <a href="post-programmatic-seo.html"><img src="assets/img/blog/programmatic-seo.jpg" alt="Programmatic SEO" class="post-thumb" loading="lazy" /></a>
+                <div class="p-3 p-md-4">
+                  <div class="d-flex gap-2 align-items-center mb-2 post-meta">
+                    <span class="badge rounded-pill">SEO</span>
+                    <span>•</span>
+                    <time datetime="2025-04-19">Apr 19, 2025</time>
+                    <span>•</span>
+                    <span>8 min read</span>
+                  </div>
+                  <h3 class="h5 mb-2"><a class="post-title" href="post-programmatic-seo.html">Programmatic SEO: Where It Works & Where It Fails</a></h3>
+                  <p class="text-muted-2 mb-3">A realistic framework to evaluate programmatic ideas before you commit engineering time.</p>
+                  <a href="post-programmatic-seo.html" class="btn btn-sm btn-outline-light">Read more</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Pagination -->
+          <nav class="mt-4" aria-label="Blog pagination">
+            <ul class="pagination pagination-sm mb-0">
+              <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Previous</a></li>
+              <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="col-lg-4">
+          <div class="sidebar-card p-4 mb-4" data-aos="fade-left" data-aos-delay="100">
+            <h5 class="mb-3">About Black Wolves</h5>
+            <p class="text-muted-2 mb-0">We help brands scale with performance marketing, conversion‑first design, and full‑stack SEO. This blog is where we share what works.</p>
+          </div>
+
+          <div class="sidebar-card p-4 mb-4" data-aos="fade-left" data-aos-delay="200">
+            <h6 class="mb-3">Popular topics</h6>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="filter-chip" href="#" onclick="setFilter(event, 'seo')">SEO</a>
+              <a class="filter-chip" href="#" onclick="setFilter(event, 'ads')">Paid Ads</a>
+              <a class="filter-chip" href="#" onclick="setFilter(event, 'social')">Social</a>
+              <a class="filter-chip" href="#" onclick="setFilter(event, 'design')">Design</a>
+              <a class="filter-chip" href="#" onclick="setFilter(event, 'case')">Case Study</a>
+            </div>
+          </div>
+
+          <div class="newsletter p-4" data-aos="fade-left" data-aos-delay="300">
+            <div class="d-flex align-items-center justify-content-between gap-3">
+              <div>
+                <h6 class="mb-1">Get new posts in your inbox</h6>
+                <p class="mb-2 text-muted-2">No spam. 1–2 emails per month.</p>
+                <form class="d-flex gap-2" onsubmit="event.preventDefault(); subscribe();">
+                  <input type="email" class="form-control" placeholder="you@example.com" aria-label="Email" required />
+                  <button class="btn btn-primary" type="submit">Subscribe</button>
+                </form>
+                <small id="subMsg" class="text-muted-2 d-block mt-2" role="status"></small>
+              </div>
+              <span class="bi bi-envelope-paper fs-1"></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section pt-0">
+    <div class="container">
+      <div class="p-4 p-md-5 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 rounded-4 newsletter">
+        <div>
+          <h4 class="mb-1">Want results like the ones you read about?</h4>
+          <p class="mb-0 text-muted-2">Book a free strategy call and we'll map a 90‑day growth plan for your brand.</p>
+        </div>
+        <a href="contact.html" class="btn btn-light btn-lg">Book a strategy call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional: site footer include placeholder -->
+  <!--#include file="partials/footer.html" -->
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+  <script>
+    // AOS init
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.AOS) AOS.init({ once: true, duration: 700, easing: 'ease-out' });
+    });
+
+    // Simple in-page filtering and search (no framework)
+    let activeCategory = 'all';
+
+    function setFilter(e, cat) {
+      e && e.preventDefault();
+      activeCategory = cat;
+      document.querySelectorAll('.filter-chip').forEach(chip => chip.classList.remove('active'));
+      if (e && e.target) e.target.classList.add('active');
+      filterPosts();
+    }
+
+    function filterPosts() {
+      const q = document.getElementById('blogSearch').value.trim().toLowerCase();
+      const cards = document.querySelectorAll('#postsGrid .post');
+      cards.forEach(card => {
+        const title = (card.getAttribute('data-title') || '').toLowerCase();
+        const cat = card.getAttribute('data-category');
+        const matchCat = activeCategory === 'all' || cat === activeCategory;
+        const matchText = !q || title.includes(q);
+        card.style.display = matchCat && matchText ? '' : 'none';
+      });
+    }
+
+    // Newsletter mock (replace with your backend or form action)
+    function subscribe() {
+      const msg = document.getElementById('subMsg');
+      msg.textContent = 'Thanks! Please check your inbox to confirm.';
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const navToggle = document.getElementById("nav-toggle");
+    const mobileNav = document.getElementById("mobile-nav");
+
+    navToggle.addEventListener("click", () => {
+      mobileNav.classList.toggle("active");
+      const icon = navToggle.querySelector("i");
+      icon.classList.toggle("bi-list");
+      icon.classList.toggle("bi-x");
+    });
+  </script>
+  <footer>
+    © 2025 Black Wolves Marketers. All rights reserved.
+  </footer>
+</body>
+
+</html>
