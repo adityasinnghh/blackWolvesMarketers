@@ -5502,9 +5502,9 @@ section,
 
   .services .custom-section .custom-content {
     align-items: center;
-    padding: 20px;
+    padding: 50px;
   }
-
+  
   .services .custom-section .custom-btn {
     margin-top: 20px;
   }
@@ -5522,3 +5522,16 @@ section,
     font-size: 13px;
   }
 }
+ /* Center Explore button */
+  .services .custom-section .custom-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .services .custom-section .custom-btn .btn {
+    margin: 0 auto;
+  }
+
+  
+  
