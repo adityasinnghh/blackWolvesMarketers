@@ -5312,6 +5312,164 @@ section,
     font-size: 14px;
   }
 }
+
+/*--------------------------------------------------------------
+# Enhanced Hover Effects for Custom Service Section
+--------------------------------------------------------------*/
+
+/* Overall hover enhancement */
+.services .custom-section:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Gradient top bar animation */
+.services .custom-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), transparent 50%)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out;
+}
+
+.services .custom-section:hover::before {
+  transform: scaleX(1);
+}
+
+/* Image hover: subtle zoom and brightness */
+.services .custom-section .custom-image {
+  flex: 1 1 40%;
+  min-height: 220px;
+  background-image: url("custom-services.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+}
+
+.services .custom-section:hover .custom-image {
+  transform: scale(1.06);
+  filter: brightness(1.08) contrast(1.05);
+}
+
+/* Text hover fade-in effect */
+.services .custom-section .flex-column {
+  flex: 1 1 55%;
+  align-items: center !important;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.services .custom-section:hover .flex-column {
+  transform: translateY(-3px);
+}
+
+/* Title hover effect */
+.services .custom-section h5 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-align: center;
+  width: 100%;
+  color: var(--heading-color);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.services .custom-section:hover h5 {
+  color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* Paragraph hover fade-in */
+.services .custom-section p {
+  text-align: center;
+  margin-top: 10px;
+  color: var(--text-color);
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.services .custom-section:hover p {
+  color: color-mix(in srgb, var(--text-color), var(--accent-color) 30%);
+  opacity: 0.9;
+}
+
+/* List item hover effect */
+.services .custom-section .custom-list li {
+  margin-bottom: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.services .custom-section .custom-list li:hover {
+  transform: translateY(-2px);
+  color: var(--accent-color);
+}
+
+/* Button hover animations */
+.services .custom-section .btn {
+  border-radius: 50px;
+  font-weight: 500;
+  padding: 10px 28px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.services .custom-section .btn:hover {
+  background-color: color-mix(in srgb, var(--accent-color), black 10%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional glowing ring on hover */
+.services .custom-section:hover .btn {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+/*--------------------------------------------------------------
+# Responsive: Mobile View (unchanged)
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+  .services .custom-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .services .custom-section .custom-image {
+    order: 2;
+    width: 100%;
+    margin-top: 20px;
+    min-height: 200px;
+  }
+
+  .services .custom-section .flex-column {
+    order: 1;
+    align-items: center !important;
+    text-align: center;
+    padding-left: 0 !important;
+  }
+
+  .services .custom-section h5 {
+    margin-bottom: 15px;
+  }
+
+  .services .custom-section .custom-btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
 /*--------------------------------------------------------------
 # Custom Section (inside Services)
 --------------------------------------------------------------*/
@@ -5533,5 +5691,161 @@ section,
     margin: 0 auto;
   }
 
-  
+  /*--------------------------------------------------------------
+# Enhanced Hover Effects for Custom Service Section
+--------------------------------------------------------------*/
+
+/* Overall hover enhancement */
+.services .custom-section:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Gradient top bar animation */
+.services .custom-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), transparent 50%)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out;
+}
+
+.services .custom-section:hover::before {
+  transform: scaleX(1);
+}
+
+/* Image hover: subtle zoom and brightness */
+.services .custom-section .custom-image {
+  flex: 1 1 40%;
+  min-height: 220px;
+  background-image: url("custom-services.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+}
+
+.services .custom-section:hover .custom-image {
+  transform: scale(1.06);
+  filter: brightness(1.08) contrast(1.05);
+}
+
+/* Text hover fade-in effect */
+.services .custom-section .flex-column {
+  flex: 1 1 55%;
+  align-items: center !important;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.services .custom-section:hover .flex-column {
+  transform: translateY(-3px);
+}
+
+/* Title hover effect */
+.services .custom-section h5 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-align: center;
+  width: 100%;
+  color: var(--heading-color);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.services .custom-section:hover h5 {
+  color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* Paragraph hover fade-in */
+.services .custom-section p {
+  text-align: center;
+  margin-top: 10px;
+  color: var(--text-color);
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.services .custom-section:hover p {
+  color: color-mix(in srgb, var(--text-color), var(--accent-color) 30%);
+  opacity: 0.9;
+}
+
+/* List item hover effect */
+.services .custom-section .custom-list li {
+  margin-bottom: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.services .custom-section .custom-list li:hover {
+  transform: translateY(-2px);
+  color: var(--accent-color);
+}
+
+/* Button hover animations */
+.services .custom-section .btn {
+  border-radius: 50px;
+  font-weight: 500;
+  padding: 10px 28px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.services .custom-section .btn:hover {
+  background-color: color-mix(in srgb, var(--accent-color), black 10%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional glowing ring on hover */
+.services .custom-section:hover .btn {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+/*--------------------------------------------------------------
+# Responsive: Mobile View (unchanged)
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+  .services .custom-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .services .custom-section .custom-image {
+    order: 2;
+    width: 100%;
+    margin-top: 20px;
+    min-height: 200px;
+  }
+
+  .services .custom-section .flex-column {
+    order: 1;
+    align-items: center !important;
+    text-align: center;
+    padding-left: 0 !important;
+  }
+
+  .services .custom-section h5 {
+    margin-bottom: 15px;
+  }
+
+  .services .custom-section .custom-btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
   
